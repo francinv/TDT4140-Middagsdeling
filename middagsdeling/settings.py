@@ -26,7 +26,7 @@ SECRET_KEY = 'w#fafp&n1=!el^do_zgr$(_v!g1c7c58nb$=ix!-2ihd$slq(f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling-staging.herokuapp.com']
 
 
 # Application definition
