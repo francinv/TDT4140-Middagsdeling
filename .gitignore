@@ -27,6 +27,7 @@
 *.sqlite
 *.sqlite3
 .coverage
+.env
 
 # OS generated files #
 ######################
