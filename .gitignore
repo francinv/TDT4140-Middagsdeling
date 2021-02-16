@@ -25,6 +25,8 @@
 *.log
 *.sql
 *.sqlite
+*.sqlite3
+.coverage
 
 # OS generated files #
 ######################
@@ -38,9 +40,4 @@ Thumbs.db
 
 .idea
 venv
-*.pot
-*.pyc
-__pycache__/
-local_settings.py
-db.sqlite3
-venv/
+__pychache__/
