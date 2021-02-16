@@ -1,0 +1,1 @@
+web: gunicorn middagsdeling.wsgi --log-file -
