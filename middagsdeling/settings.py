@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 
 db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
 DATABASES = {'default':{
-    'ENGINE' : 'django.db.backends.sqlite3',
-    'NAME' : 'mydatabase',
+    'ENGINE' : 'django.db.backends.postgresql_psycopg2',
+    'NAME' : 'middagsdeling',
+    'USER' : 'postgres',
+    'PASSWORD' : 'admin',
+    'HOST' : 'localhost',
+    'PORT' : '5432'
     }
 }
 DATABASES['default'].update(db_from_env)
