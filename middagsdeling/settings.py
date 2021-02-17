@@ -86,7 +86,14 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+db_from_env = dj_database_url.config(conn_max_age=600, ssl_require=True)
+DATABASES = {'default':{
+    'ENGINE' : 'django.db.backends.sqlite3',
+    'NAME' : 'mydatabase',
+    }
+}
+DATABASES['default'].update(db_from_env)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
