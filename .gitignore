@@ -42,3 +42,4 @@ Thumbs.db
 .idea
 venv
 __pychache__/
+middagsdeling/local_settings.py

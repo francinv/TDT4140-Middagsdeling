@@ -14,6 +14,11 @@ from pathlib import Path
 import dj_database_url
 import dotenv
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -26,10 +31,12 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'w#fafp&n1=!el^do_zgr$(_v!g1c7c58nb$=ix!-2ihd$slq(f'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling-staging.herokuapp.com']
 
@@ -87,12 +94,11 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
+    'default': dj_database_url.config()
 }
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -149,3 +155,4 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=foo,bar'
 ]
+
