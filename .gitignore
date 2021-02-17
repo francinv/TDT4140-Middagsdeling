@@ -26,6 +26,8 @@
 *.sql
 *.sqlite
 *.sqlite3
+.coverage
+.env
 
 # OS generated files #
 ######################
@@ -39,3 +41,4 @@ Thumbs.db
 
 .idea
 venv
+__pychache__/
