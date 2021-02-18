@@ -37,7 +37,6 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling-staging.her
 # Application definition
 
 INSTALLED_APPS = [
-    'django_nose',
     'users.apps.UsersConfig',
     'APP.apps.AppConfig',
     'crispy_forms',
@@ -146,10 +145,3 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
-
-NOSE_ARGS = [
-    '--with-coverage',
-    '--cover-package=foo,bar'
-]
