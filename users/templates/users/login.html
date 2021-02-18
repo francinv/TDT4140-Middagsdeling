@@ -1,0 +1,72 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        -->
+        <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
+        <title>Middagsdeling login</title>
+        <script data-dapp-detection="">
+            !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
+        </script>
+    </head>
+    <body>
+        <div id="id_pageContent">
+            <div id="id_leftContent">
+                <img id="id_foodImg" src="{% static '/img/sharingFoodCropped.jpg' %}" max-height=640 max-width=1476 alt="Image: Birdview photograph of dinnertable and multiple hands reaching for food.">
+                <!--
+                ## Evt. plass til logo og/eller brandname, venstre div oppå bildet
+                <h1 id="id_brandName">MealShare</h1>
+                <img id="id_logoImg" src="{% static '/img/logo.png' %}" max-height=200 max-width=200 alt="Image: Green logo of a fork and a knife with a circle around.">
+                -->
+            </div>
+
+            <div id="rightContent">
+                <form method="POST">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Klbu9l9Owr5xp2jaaRs8MsCDjoPTmFvy1mokyhZpeVLpKsQLlxTbggIBIEkroVLN">
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Log in</legend>
+                        
+                        <div id="id_setName" class="inputset">    
+                            <div id="id_div_username" class="form-group">
+                                <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_username" type="text" placeholder="Brukernavn" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="id_setPassword" class="inputset">
+                            <div id="id_div_password" class="form-group">
+                                <label for="id_password" class=" requiredField">Password<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_password" type="password" placeholder="********" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="">
+                                </div>
+                            </div>         
+                        </div>
+                    </fieldset>
+
+                    <div id="id_loginButton" class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Log in</button>
+                    </div>
+                </form>
+
+                <div id="id_loginText" class="border-top pt-3">
+                    <small class="text-muted">
+                        Don't Have An Account? <a class="ml-2" href="/register">Register now</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
+
+    <iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
+    </body>
+</html>

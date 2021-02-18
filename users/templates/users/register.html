@@ -1,33 +1,132 @@
+{% load static%}
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Middagsdeling register</title>
-</head>
-<body>
-    {% load crispy_forms_tags %}
-    <form method="POST">
-        {% csrf_token %}
-        <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Register now</legend>
-            {{ form|crispy }}
-        </fieldset>
-        <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Sign up</button>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        -->
+        <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
+        <title>Middagsdeling register</title>
+        <script data-dapp-detection="">
+            !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
+        </script>
+    </head>
+    <body>
+        <div id="id_pageContent">
+            <div id="id_leftContent">
+                <img id="id_foodImg" src="{% static '/img/sharingFoodCropped.jpg' %}" max-height=640 max-width=1476 alt="Image: Birdview photograph of dinnertable and multiple hands reaching for food.">
+                <!--
+                ## Evt. plass til logo og/eller brandname, venstre div oppå bildet
+                <h1 id="id_brandName">MealShare</h1>
+                <img id="id_logoImg" src="{% static '/img/logo.png' %}" max-height=200 max-width=200 alt="Image: Green logo of a fork and a knife with a circle around.">
+                -->
+            </div>
+            
+            <div id="rightContent">
+                <form method="POST">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="Klbu9l9Owr5xp2jaaRs8MsCDjoPTmFvy1mokyhZpeVLpKsQLlxTbggIBIEkroVLN">
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4">Register now</legend>
+                        
+                        <div id="id_setName" class="inputset">    
+                            <div id="id_div_username" class="form-group">
+                                <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_username" type="text" placeholder="Brukernavn" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="">
+                                    <small id="id_hint_username" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @ . + - _ only.</small>
+                                </div>
+                            </div>
+
+                            <div id="id_div_name" class="form-group">
+                                <label for="id_name" class=" requiredField">Fullt navn<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_name" type="text" placeholder="Fullt navn" name="name" class="textinput textInput form-control" required="">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="id_setAllergyAddress" class="inputset">    
+                            <div id="id_div_allergies" class="form-group">
+                                <label for="id_allergies" class=" requiredField">Allergier<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_allergies" type="text" placeholder="Allergier" name="allergies" class="textinput textInput form-control" required="">
+                                </div>
+                            </div>     
+
+                            <div id="id_div_address" class="form-group">
+                                <label id="id_adressLabel" for="id_address" class=" requiredField">Gatenavn og husnummer<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_address" type="text" placeholder="Adresse" name="address" class="textinput textInput form-control" required="">
+                                </div>
+                            </div>
+                        </div>      
+
+                        <div id="id_setPost" class="inputset">    
+                            <div id="id_div_postnr" class="form-group">
+                                <label for="id_postnr" class=" requiredField">Postnummer<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_postnr" type="number" placeholder="0000" min=0 max=9999 name="postnr" class="numberinput form-control" required="">
+                                </div>
+                            </div>            
+
+                            <div id="id_div_poststed" class="form-group">
+                                <label for="id_poststed" class=" requiredField">Sted<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_poststed type="text" placeholder="Stedsnavn" name="poststed" class="textinput textInput form-control" required=""">
+                                </div>
+                            </div>
+                        </div>           
+
+                        <div id="id_setPassword" class="inputset">    
+                            <div id="id_div_password1" class="form-group">
+                                <label for="id_password1" class=" requiredField">Password<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_password1" type="password" placeholder="********" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="">
+                                    <div id="id_passwordHover">?</div>
+                                    <div id="id_boxOnHover">
+                                        <!--<small id="id_hint_password1" class="form-text text-muted">-->
+                                            <ul id="id_hint_password1">
+                                                <li>Your password can’t be too similar to your other personal information.</li>
+                                                <li>Your password must contain at least 8 characters.</li>
+                                                <li>Your password can’t be a commonly used password.</li>
+                                                <li>Your password can’t be entirely numeric.</li>
+                                            </ul>
+                                        <!--</small>-->
+                                    </div>
+                                </div>
+                            </div>         
+
+                            <div id="id_div_password2" class="form-group">
+                                <label for="id_password2" class=" requiredField">Password confirmation<span class="asteriskField">*</span></label>
+                                <div class="">
+                                    <input id="id_password2" type="password" placeholder="********" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="">
+                                    <small id="id_hint_password2" class="form-text text-muted">Enter the same password as before, for verification.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <div id="id_signUpButton" class="form-group">
+                        <button class="btn btn-outline-info" type="submit">Sign up</button>
+                    </div>
+                </form>
+
+                <div id="id_signInText" class="border-top pt-3">
+                    <small class="text-muted">
+                        Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+                    </small>
+                </div>
+            </div>
         </div>
-    </form>
 
-    <div class="border-top pt-3">
-        <small class="text-muted">
-               Already Have An Account? <a class="ml-2" href="#">Sign In</a>
-        </small>
-    </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-</body>
+    <iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
+    </body>
 </html>
