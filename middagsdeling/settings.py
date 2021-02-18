@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling.herokuapp.c
 # Application definition
 
 INSTALLED_APPS = [
+    'django_nose',
     'users.apps.UsersConfig',
     'APP.apps.AppConfig',
     'crispy_forms',
