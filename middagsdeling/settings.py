@@ -9,26 +9,29 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 import dj_database_url
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Loads SQLite database when working locally
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+SECRET_KEY = 'w#fafp&n1=!el^do_zgr$(_v!g1c7c58nb$=ix!-2ihd$slq(f'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling-staging.herokuapp.com']
 
 
 # Application definition
@@ -82,15 +85,17 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASES = {'default': {
+    'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    'NAME': 'postgres',
+    'USER': 'postgres',
+    'PASSWORD': 'data1',
+    'HOST': 'localhost',
+    'PORT': '5432'
     }
 }
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
 
+DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -130,11 +135,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-#location where django collect all static files
-STATIC_ROOT = os.path.join(BASE_DIR,'static')
-# location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'middagsdeling/static')
-]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# location where django collect all static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# location where you will store your static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')
+                    ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
