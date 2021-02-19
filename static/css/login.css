@@ -5,7 +5,6 @@
 /* WHOLE PAGE */
 
 body {
-    /*background-image: url('../img/sharingFood.jpg');*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-color: rgb(154, 197, 154);
@@ -19,6 +18,7 @@ body {
     margin: 0;
 }
 
+/* Box of content, contains left div (leftContent) and right div (rightContent) */
 #id_pageContent {
     background-color: rgb(207, 240, 220);
     display: grid;
@@ -30,7 +30,7 @@ body {
 
 
 
-/* LEFT DIV */
+/* LEFT DIV (image-part) */
 
 #id_leftContent {
     overflow: hidden;
@@ -50,6 +50,7 @@ body {
     filter: opacity(70%);
 }
 
+/* H1 and img overlayed image in left div */
 /*
 #id_brandName {
     position: absolute;
@@ -75,7 +76,7 @@ body {
 
 
 
-/* RIGHT DIV */
+/* RIGHT DIV (form-part) */
 
 #rightContent {
     background-color: rgb(207, 240, 220);
@@ -91,17 +92,12 @@ fieldset {
     border: 0;
 }
 
+/* Heading on form */
 legend {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: -10px;
-}
-
-.inputset {
-    display: flex;
-    justify-content: space-between;
-    margin: 0;
 }
 
 input {
@@ -113,6 +109,7 @@ input {
     padding-left: 8px;
 }
 
+/* Grouped label, inputfield and small */
 .form-group {
     margin-top: 20px;
 }

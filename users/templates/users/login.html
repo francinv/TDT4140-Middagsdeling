@@ -30,8 +30,8 @@
                     {% csrf_token %}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4">Log in</legend>
-                        
                         <div id="id_setName" class="inputset">    
+                            <!-- Username -->
                             <div id="id_div_username" class="form-group">
                                 <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span></label>
                                 <div class="">
@@ -39,7 +39,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Password -->
                         <div id="id_setPassword" class="inputset">
                             <div id="id_div_password" class="form-group">
                                 <label for="id_password" class=" requiredField">Password<span class="asteriskField">*</span></label>
@@ -50,11 +50,13 @@
                         </div>
                     </fieldset>
 
+                    <!-- Log in submit-button -->
                     <div id="id_loginButton" class="form-group">
                         <button class="btn btn-outline-info" type="submit">Log in</button>
                     </div>
                 </form>
 
+                <!-- Register instead -->
                 <div id="id_loginText" class="border-top pt-3">
                     <small class="text-muted">
                         Don't Have An Account? <a class="ml-2" href="/register">Register now</a>
