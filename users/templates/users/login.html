@@ -27,7 +27,7 @@
 
             <div id="rightContent">
                 <form method="POST">
-                    <input type="hidden" name="csrfmiddlewaretoken" value="Klbu9l9Owr5xp2jaaRs8MsCDjoPTmFvy1mokyhZpeVLpKsQLlxTbggIBIEkroVLN">
+                    {% csrf_token %}
                     <fieldset class="form-group">
                         <legend class="border-bottom mb-4">Log in</legend>
                         
