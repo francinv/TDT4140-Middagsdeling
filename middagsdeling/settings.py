@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import dj_database_url
 import dotenv
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -137,7 +138,7 @@ STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # location where django collect all static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # location where you will store your static files
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')
@@ -145,3 +146,4 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+django_heroku.settings(locals())
