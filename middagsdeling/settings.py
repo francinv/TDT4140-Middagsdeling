@@ -87,16 +87,16 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {'default': {
-    'ENGINE': 'django.db.backends.postgresql_psycopg2',
-    'NAME': 'postgres',
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'middagsdelingDB',
     'USER': 'postgres',
-    'PASSWORD': 'data1',
+    'PASSWORD': 'admin',
     'HOST': 'localhost',
     'PORT': ''
     }
 }
 
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -141,9 +141,7 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # location where you will store your static files
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')
-                    ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')]
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-django_heroku.settings(locals())
