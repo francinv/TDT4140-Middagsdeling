@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/create-post.css' %}">
+    <title>Create Post</title>
+</head>
+<body>
+    <!-- Header -->
+    <div id="header">
+        <h1>Header goes here</h1>
+    </div>
+    <!-- Header end -->
+    <!-- Create post -->
+    <div id="create-post-container">
+        <form method="POST">
+            <h2>Create event</h2>
+            <div class="input-container" id="create-post-title-container">
+                <label for="create-post-title">Title</label>
+                <input type="text" id="create-post-title" name="create-post-title">
+            </div>
+            <div class="input-container" id="create-post-description-container">
+                <label for="create-post-description">Description</label>
+                <textarea type="textarea" id="create-post-description" name="create-post-description"  rows="4" cols="20"></textarea>
+            </div>
+            <div class="input-container" id="create-post-allergies-container">
+                <label for="create-post-allergies">Contains (Allergies)</label>
+                <div id="create-post-allergies">
+                    <label for="milk">Milk</label>
+                    <input type="checkbox" id="milk" name="milk">
+                    <label for="eggs">Eggs</label>
+                    <input type="checkbox" id="eggs" name="eggs">
+                    <label for="nuts">Nuts</label>
+                    <input type="checkbox" id="nuts" name="nuts">
+                    <label for="fish">Fish</label>
+                    <input type="checkbox" id="fish" name="fish">
+                    <label for="wheat">Wheat</label>
+                    <input type="checkbox" id="wheat" name="wheat">
+                    <label for="shellfish">Shellfish</label>
+                    <input type="checkbox" id="shellfish" name="shellfish">
+                    <label for="soy">Soy</label>
+                    <input type="checkbox" id="soy" name="soy">
+                </div>
+            </div>
+            <div class="input-container" id="create-post-max-container">
+                <label for="create-post-max">Guest limit</label>
+                <input type="number" id="create-post-max" name="create-post-max">
+            </div>
+            <div id="create-post-button">
+                <button type="submit">Submit</button>
+            </div>
+         </form>
+    </div>
+
+    <!-- Create post end -->
+</body>
+</html>
