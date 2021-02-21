@@ -5,10 +5,10 @@
 /* WHOLE PAGE */
 
 body {
+    background-color: rgb(193, 228, 166);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: rgb(154, 197, 154);
-    color: rgb(30, 30, 30);
+    color: rgb(17, 17, 17);
     display: grid;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -20,7 +20,7 @@ body {
 
 /* Box of content, contains left div (leftContent) and right div (rightContent) */
 #id_pageContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225);
     display: grid;
     grid-template-areas: "left right";
     padding: 0;
@@ -33,11 +33,11 @@ body {
 /* LEFT DIV (image-part) */
 
 #id_leftContent {
+    background-color: rgb(234, 246, 225, 0);
     overflow: hidden;
     position: relative;
     text-align: center;
     width: 380px;
-    background-color: rgb(207, 240, 220);
     margin:0;
 }
 
@@ -80,7 +80,7 @@ body {
 /* RIGHT DIV (form-part) */
 
 #rightContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225, 0);
     margin: 20px 20px 0px 0px;
     padding: 15px 0px 15px 15px;
     display: grid;
@@ -142,6 +142,27 @@ label {
     margin-top: 40px;
 }
 
+
+
+
+.labelCheck {
+    display: relative;
+    align-items: center;
+}
+
+.checkboxes {
+    color: blue;
+}
+
+#id_allergy1 {
+    border: 1px solid grey;
+}
+
+
+
+
+
+
 #id_hint_password2 {
     position: absolute;
     margin-top: 50px;
@@ -150,9 +171,19 @@ label {
     width: 200px;
 }
 
+
+/*
+#signDiv {
+    width: 220px;
+    position: relative;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+*/
+
 button {
-    border: 0px solid rgb(184, 231, 203);
-    background-color: rgb(147, 201, 168);
+    background-color: rgb(190, 209, 177);
+    border: 0px;
     border-radius: 8px;
     outline: none;
     height: 40px;
@@ -163,11 +194,11 @@ button {
 
 #id_signUpButton {
     text-align: center;
+    align-items: right;
     margin-top: 50px;
 }
 
 #id_signInText {
     text-align: center;
-    padding: 0;
     margin-top: 10px;
 }

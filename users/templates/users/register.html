@@ -6,7 +6,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
-        <title>Middagsdeling register</title>
+        <title>Registrer bruker</title>
         <script data-dapp-detection="">
             !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
         </script>
@@ -26,14 +26,14 @@
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Register now</legend>
+                        <legend class="border-bottom mb-4">Registrer bruker</legend>
                         <div id="id_setName" class="inputset">
                             <!-- Username -->    
                             <div id="id_div_username" class="form-group">
-                                <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span></label>
+                                <label for="id_username" class=" requiredField">Brukernavn<span class="asteriskField">*</span></label>
                                 <div class="">
                                     <input id="id_username" type="text" placeholder="Brukernavn" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="">
-                                    <small id="id_hint_username" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @ . + - _ only.</small>
+                                    <small id="id_hint_username" class="form-text text-muted">Maks 150 tegn. Bokstaver, tall og @ . + - _ er lov.</small>
                                 </div>
                             </div>
                             <!-- Full name -->
@@ -45,12 +45,12 @@
                             </div>
                         </div>
                         
-                        <div id="id_setAllergyAddress" class="inputset">    
+                        <div id="id_setAllergyAddress" class="inputset">
                             <!-- Allergy -->
                             <div id="id_div_allergies" class="form-group">
                                 <label for="id_allergies" class=" requiredField">Allergier<span class="asteriskField">*</span></label>
-                                <div class="">
-                                    <input id="id_allergies" type="text" placeholder="Allergier" name="allergies" class="textinput textInput form-control" required="">
+                                <div class="checkboxes">
+                                    <input id="id_allergy1" placeholder="Allergi" name="allergy1" type="input" class="checkboxinput checkboxInput form-control" required="">
                                 </div>
                             </div>     
                             <!-- Address -->
@@ -60,7 +60,7 @@
                                     <input id="id_address" type="text" placeholder="Adresse" name="address" class="textinput textInput form-control" required="">
                                 </div>
                             </div>
-                        </div>      
+                        </div>
 
                         <div id="id_setPost" class="inputset">    
                             <!-- Post nr. -->
@@ -82,17 +82,17 @@
                         <div id="id_setPassword" class="inputset">       
                             <!-- Password -->
                             <div id="id_div_password1" class="form-group">
-                                <label for="id_password1" class=" requiredField">Password<span class="asteriskField">*</span></label>
+                                <label for="id_password1" class=" requiredField">Passord<span class="asteriskField">*</span></label>
                                 <div class="">
                                     <input id="id_password1" type="password" placeholder="********" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="">
                                 </div>
                             </div>         
                             <!-- Password confirmation -->
                             <div id="id_div_password2" class="form-group">
-                                <label for="id_password2" class=" requiredField">Password confirmation<span class="asteriskField">*</span></label>
+                                <label for="id_password2" class=" requiredField">Bekreft passord<span class="asteriskField">*</span></label>
                                 <div class="">
                                     <input id="id_password2" type="password" placeholder="********" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="">
-                                    <small id="id_hint_password2" class="form-text text-muted">Enter the same password as before, for verification.</small>
+                                    <small id="id_hint_password2" class="form-text text-muted">Skriv inn samme passord igjen.</small>
                                 </div>
                             </div>
                         </div>
@@ -100,14 +100,14 @@
 
                     <!-- Sign up submit-button -->
                     <div id="id_signUpButton" class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Sign up</button>
+                        <button class="btn btn-outline-info" type="submit">Registrer</button>
                     </div>
                 </form>
 
                 <!-- Login instead -->
                 <div id="id_signInText" class="border-top pt-3">
                     <small class="text-muted">
-                        Already Have An Account? <a class="ml-2" href="/login">Sign In</a>
+                        Har du allerede en bruker? <a class="ml-2" href="/login">Logg inn</a>
                     </small>
                 </div>
             </div>

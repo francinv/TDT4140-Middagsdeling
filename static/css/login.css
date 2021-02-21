@@ -5,10 +5,10 @@
 /* WHOLE PAGE */
 
 body {
+    background-color: rgb(193, 228, 166);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: rgb(154, 197, 154);
-    color: rgb(30, 30, 30);
+    color: rgb(17, 17, 17);
     display: grid;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -20,7 +20,7 @@ body {
 
 /* Box of content, contains left div (leftContent) and right div (rightContent) */
 #id_pageContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225);
     display: grid;
     grid-template-areas: "left right";
     padding: 0;
@@ -33,11 +33,11 @@ body {
 /* LEFT DIV (image-part) */
 
 #id_leftContent {
+    background-color: rgb(234, 246, 225, 0);
     overflow: hidden;
     position: relative;
     text-align: center;
     width: 380px;
-    background-color: rgb(207, 240, 220);
     margin:0;
 }
 
@@ -79,7 +79,7 @@ body {
 /* RIGHT DIV (form-part) */
 
 #rightContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225, 0);
     margin: 20px 20px 0px 0px;
     padding: 15px 0px 15px 15px;
     display: block;
@@ -124,8 +124,8 @@ label {
 }
 
 button {
-    border: 0px solid rgb(184, 231, 203);
-    background-color: rgb(147, 201, 168);
+    background-color: rgb(190, 209, 177);
+    border: 0px;
     border-radius: 8px;
     outline: none;
     height: 40px;
