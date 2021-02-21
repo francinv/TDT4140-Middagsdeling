@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         -->
         <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
-        <title>Middagsdeling login</title>
+        <title>Logg inn</title>
         <script data-dapp-detection="">
             !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
         </script>
@@ -29,11 +29,11 @@
                 <form method="POST">
                     {% csrf_token %}
                     <fieldset class="form-group">
-                        <legend class="border-bottom mb-4">Log in</legend>
+                        <legend class="border-bottom mb-4">Logg in</legend>
                         <div id="id_setName" class="inputset">    
                             <!-- Username -->
                             <div id="id_div_username" class="form-group">
-                                <label for="id_username" class=" requiredField">Username<span class="asteriskField">*</span></label>
+                                <label for="id_username" class=" requiredField">Brukernavn<span class="asteriskField">*</span></label>
                                 <div class="">
                                     {{ form.username }}
                                 </div>
@@ -42,7 +42,7 @@
                         <!-- Password -->
                         <div id="id_setPassword" class="inputset">
                             <div id="id_div_password" class="form-group">
-                                <label for="id_password" class=" requiredField">Password<span class="asteriskField">*</span></label>
+                                <label for="id_password" class=" requiredField">Passord<span class="asteriskField">*</span></label>
                                 <div class="">
                                     {{ form.password }}
                                 </div>
@@ -52,7 +52,7 @@
 
                     <!-- Log in submit-button -->
                     <div id="id_loginButton" class="form-group">
-                        <button class="btn btn-outline-info" type="submit">Log in</button>
+                        <button class="btn btn-outline-info" type="submit">Logg in</button>
                     </div>
                 </form>
 

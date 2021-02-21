@@ -9,13 +9,19 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
-from pathlib import Path
 import os
+from pathlib import Path
+import dj_database_url
+import dotenv
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Loads SQLite database when working locally
+dotenv_file = os.path.join(BASE_DIR, ".env")
+if os.path.isfile(dotenv_file):
+    dotenv.load_dotenv(dotenv_file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -26,13 +32,12 @@ SECRET_KEY = 'w#fafp&n1=!el^do_zgr$(_v!g1c7c58nb$=ix!-2ihd$slq(f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'middagsdeling-staging.herokuapp.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django_nose',
     'users.apps.UsersConfig',
     'APP.apps.AppConfig',
     'crispy_forms',
@@ -79,12 +84,16 @@ WSGI_APPLICATION = 'middagsdeling.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DATABASES = {'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'middagsdelingDB',
+    'USER': 'postgres',
+    'PASSWORD': 'admin',
+    'HOST': 'localhost',
+    'PORT': ''
     }
 }
+
 
 
 # Password validation
@@ -124,16 +133,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
-TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-NOSE_ARGS = [
-    '--with-coverage',
-    '--cover-package=foo,bar'
-]
+# location where django collect all static files
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-LOGIN_REDIRECT_URL = 'APP-home'
-LOGIN_URL = 'login'
+# location where you will store your static files
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'middagsdeling/static')]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+django_heroku.settings(locals())
