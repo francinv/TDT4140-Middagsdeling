@@ -134,3 +134,6 @@ NOSE_ARGS = [
     '--with-coverage',
     '--cover-package=foo,bar'
 ]
+
+LOGIN_REDIRECT_URL = 'APP-home'
+LOGIN_URL = 'login'
