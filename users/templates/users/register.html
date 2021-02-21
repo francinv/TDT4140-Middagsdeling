@@ -1,7 +1,7 @@
 {% load static%}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,15 +32,15 @@
                             <div id="id_div_username" class="form-group">
                                 <label for="id_username" class=" requiredField">Brukernavn<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_username" type="text" placeholder="Brukernavn" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="">
-                                    <small id="id_hint_username" class="form-text text-muted">Maks 150 tegn. Bokstaver, tall og @ . + - _ er lov.</small>
+                                    {{ form.username }}
+                                    <small id="id_hint_username" class="form-text text-muted">Required. 150 characters or fewer. Letters, digits and @ . + - _ only.</small>
                                 </div>
                             </div>
                             <!-- Full name -->
                             <div id="id_div_name" class="form-group">
                                 <label for="id_name" class=" requiredField">Fullt navn<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_name" type="text" placeholder="Fullt navn" name="name" class="textinput textInput form-control" required="">
+                                    {{ form.name }}
                                 </div>
                             </div>
                         </div>     
@@ -49,15 +49,15 @@
                             <!-- Allergy -->
                             <div id="id_div_allergies" class="form-group">
                                 <label for="id_allergies" class=" requiredField">Allergier<span class="asteriskField">*</span></label>
-                                <div class="checkboxes">
-                                    <input id="id_allergy1" placeholder="Allergi" name="allergy1" type="input" class="checkboxinput checkboxInput form-control" required="">
+                                <div class="">
+                                    {{ form.allergies }}
                                 </div>
                             </div>
                             <!-- Address -->
                             <div id="id_div_address" class="form-group">
                                 <label id="id_adressLabel" for="id_address" class=" requiredField">Gatenavn og husnummer<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_address" type="text" placeholder="Adresse" name="address" class="textinput textInput form-control" required="">
+                                    {{ form.address }}
                                 </div>
                             </div>
                         </div>
@@ -67,14 +67,14 @@
                             <div id="id_div_postnr" class="form-group">
                                 <label for="id_postnr" class=" requiredField">Postnummer<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_postnr" type="number" placeholder="0000" min=0 max=9999 name="postnr" class="numberinput form-control" required="">
+                                    {{ form.postnr }}
                                 </div>
                             </div>
                             <!-- Poststed -->
                             <div id="id_div_poststed" class="form-group">
                                 <label for="id_poststed" class=" requiredField">Sted<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_poststed" type="text" placeholder="Stedsnavn" name="poststed" class="textinput textInput form-control" required="">
+                                    {{ form.poststed }}
                                 </div>
                             </div>
                         </div>
@@ -84,15 +84,15 @@
                             <div id="id_div_password1" class="form-group">
                                 <label for="id_password1" class=" requiredField">Passord<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_password1" type="password" placeholder="********" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="">
+                                    {{ form.password1 }}
                                 </div>
                             </div>
                             <!-- Password confirmation -->
                             <div id="id_div_password2" class="form-group">
                                 <label for="id_password2" class=" requiredField">Bekreft passord<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_password2" type="password" placeholder="********" name="password2" autocomplete="new-password" class="textinput textInput form-control" required="">
-                                    <small id="id_hint_password2" class="form-text text-muted">Skriv inn samme passord igjen.</small>
+                                    {{ form.password2 }}
+                                    <small id="id_hint_password2" class="form-text text-muted">Enter the same password as before, for verification.</small>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +107,7 @@
                 <!-- Login instead -->
                 <div id="id_signInText" class="border-top pt-3">
                     <small class="text-muted">
-                        Har du allerede en bruker? <a class="ml-2" href="/login">Logg inn</a>
+                        Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
                     </small>
                 </div>
             </div>
@@ -115,7 +115,6 @@
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>-->
 
     <iframe id="nr-ext-rsicon" style="position: absolute; display: none; width: 50px; height: 50px; z-index: 2147483647; border-style: none; background: transparent;"></iframe>
     </body>

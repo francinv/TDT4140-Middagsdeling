@@ -35,7 +35,7 @@
                             <div id="id_div_username" class="form-group">
                                 <label for="id_username" class=" requiredField">Brukernavn<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_username" type="text" placeholder="Brukernavn" name="username" maxlength="150" autofocus="" class="textinput textInput form-control" required="">
+                                    {{ form.username }}
                                 </div>
                             </div>
                         </div>
@@ -44,7 +44,7 @@
                             <div id="id_div_password" class="form-group">
                                 <label for="id_password" class=" requiredField">Passord<span class="asteriskField">*</span></label>
                                 <div class="">
-                                    <input id="id_password" type="password" placeholder="********" name="password1" autocomplete="new-password" class="textinput textInput form-control" required="">
+                                    {{ form.password }}
                                 </div>
                             </div>         
                         </div>
@@ -59,7 +59,7 @@
                 <!-- Register instead -->
                 <div id="id_loginText" class="border-top pt-3">
                     <small class="text-muted">
-                        Har du ikke en bruker? <a class="ml-2" href="/register">Registrer her</a>
+                        Don't Have An Account? <a class="ml-2" href="{% url 'register' %}">Register now</a>
                     </small>
                 </div>
             </div>
