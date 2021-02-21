@@ -6,4 +6,4 @@ from django.http import HttpResponse
 # Create your views here.
 @login_required
 def home(request):
-    return render(request, 'APP/index.html')
+    return render(request, 'APP/home.html')

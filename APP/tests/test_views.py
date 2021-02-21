@@ -13,5 +13,5 @@ class TestViews(TestCase):
         response = self.client.get(self.home_url)
 
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, 'APP/index.html')
+        self.assertTemplateUsed(response, 'APP/home.html')
 
