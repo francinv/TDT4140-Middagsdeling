@@ -1,8 +1,5 @@
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
-from django.http import HttpResponse
-from . import models
-from .models import Middag
+from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 from django.views.generic import (
     ListView,
     DetailView,
@@ -10,9 +7,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
+from .models import Middag
 
-
-@login_required
 def home(request):
     context = {
         'middager': Middag.objects.all()
@@ -25,3 +21,37 @@ class MiddagListView(ListView):
     context_object_name = 'middager'
     ordering = ['-date_posted']
 
+class MiddagDetailView(DetailView):
+    model = Middag
+
+
+class MiddagCreateView(CreateView):
+    model = Middag
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+class MiddagUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
+    model = Middag
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener']
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
+
+class MiddagDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+    model = Middag
+    success_url = 'home/'
+
+    def test_func(self):
+        post = self.get_object()
+        if self.request.user == post.author:
+            return True
+        return False
