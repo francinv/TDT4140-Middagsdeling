@@ -1,0 +1,26 @@
+{% extends "APP/base.html" %}
+
+{% block content %}
+    <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="{% url 'profile' %}">{{ object.author }}</a>
+                    <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+                </div>
+                {% if object.author == user %}
+                    <div>
+                        <a class="btn btn-secondary" href="{% url 'middag-update' object.id %}">Endre</a>
+                        <a class="btn btn-secondary" href="{% url 'middag-delete' object.id %}">Slett</a>
+                    </div>
+                {% endif %}
+            <div class="article-content">
+                <h2><a class="article-title">{{ object.title }}</a></h2>
+                <p class="article-content">{{ object.content }}</p>
+                <p class="article-content">{{ object.guests }}</p>
+                <p class="article-content">{{ object.sharing }}</p>
+                <p class="article-content">{{ object.allergener }}</p>
+            </div>
+
+            </div>
+        </article>
+{% endblock %}
