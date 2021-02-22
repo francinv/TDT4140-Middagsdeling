@@ -1,1 +1,17 @@
 {% extends "APP/base.html" %}
+
+{% block content %}
+    {% for Middag in middager %}
+        <article class="media content-section">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="{% url 'profile' %}">{{ Middag.author }}</a>
+                    <small class="text-muted">{{ Middag.date_posted|date:"F d, Y" }}</small>
+                </div>
+                <h2><a class="article-title" href="#">{{ Middag.title }}</a></h2>
+                <p class="article-content">{{ Middag.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+
+{% endblock %}

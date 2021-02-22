@@ -1,6 +1,10 @@
 from django.urls import path
 from . import views
+from .views import (
+    MiddagListView
+
+)
 
 urlpatterns = [
-    path('home/', views.home, name='APP-home'),
+    path('home/', MiddagListView.as_view(), name='APP-home'),
 ]
