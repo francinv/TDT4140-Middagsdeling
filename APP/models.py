@@ -13,6 +13,7 @@ allergener_choices =[
         ('LAKTOSE', 'Laktose'),
         ('EGG', 'Egg'),
         ('NØTTER', 'Nøtter'),
+        ('INGEN', 'Ingen'),
 ]
 
 class Middag(models.Model):
