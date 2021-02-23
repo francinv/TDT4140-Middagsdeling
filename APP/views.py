@@ -54,7 +54,7 @@ class MiddagUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class MiddagDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Middag
-    success_url = 'home/'
+    success_url = '/home'
 
     def test_func(self):
         post = self.get_object()
