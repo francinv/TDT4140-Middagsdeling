@@ -5,11 +5,10 @@
 /* WHOLE PAGE */
 
 body {
-    /*background-image: url('../img/sharingFood.jpg');*/
+    background-color: rgb(193, 228, 166);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: rgb(154, 197, 154);
-    color: rgb(30, 30, 30);
+    color: rgb(17, 17, 17);
     display: grid;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
@@ -20,11 +19,11 @@ body {
 }
 
 #id_pageContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225);
     display: grid;
     grid-template-areas: "left right";
     padding: 0;
-    margin: 20px 0 20px 0;
+    margin: 28px 0 20px 0;
     min-height: 588px;
 }
 
@@ -37,7 +36,7 @@ body {
     position: relative;
     text-align: center;
     width: 380px;
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225, 0);
     margin:0;
 }
 
@@ -50,36 +49,11 @@ body {
     filter: opacity(70%);
 }
 
-/*
-#id_brandName {
-    position: absolute;
-    z-index: 1000;
-    color: rgb(27, 27, 27);
-    text-shadow: 0 0 1px rgb(207, 207, 207);
-    font-family: 'Monteserrat', sans-serif;
-    font-weight: bold;
-    font-size: 350%;
-    margin-top: 150px;
-    margin-left: 80px;
-}
-
-#id_logoImg {
-    position: absolute;
-    filter:brightness(40%);
-    margin-left: -65px;
-    margin-top: 250px;
-    height: 130px;
-    width: auto;
-}
-*/
-
-
-
 
 /* RIGHT DIV */
 
 #rightContent {
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(234, 246, 225, 0);
     margin: 20px 20px 0px 0px;
     padding: 15px 0px 15px 15px;
     display: grid;
@@ -148,8 +122,8 @@ label {
 }
 
 button {
+    background-color: rgb(190, 209, 177);
     border: 0px solid rgb(184, 231, 203);
-    background-color: rgb(147, 201, 168);
     border-radius: 8px;
     outline: none;
     height: 40px;

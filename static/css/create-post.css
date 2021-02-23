@@ -16,10 +16,10 @@ body {
 /* Create Post section */
 
 #create-post-container {
+    background-color: rgb(234, 246, 225);
     margin: 35px auto;
     width: 700px;
     height: 588px;
-    background-color: rgb(234, 246, 225);
     border-radius: 8px;
 }
 
@@ -41,21 +41,21 @@ body {
 /* Create Post Title */
 
 #create-post-title-container input {
+    background-color: rgb(242, 255, 248);
+    border: 0.5px solid rgb(202, 202, 202);
     width: 99%;
     height: 30px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
-    background-color: rgb(242, 255, 248);
 }
 
 /* Create Post Description */
 
 #create-post-description-container textarea {
+    background-color: rgb(242, 255, 248);
+    border: 0.5px solid rgb(202, 202, 202);
     width: 99%;
     resize: none;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
-    background-color: rgb(242, 255, 248);
 }
 
 /* Create Post Address */
@@ -66,9 +66,9 @@ body {
 }
 
 #create-post-address input {
+    border: 0.5px solid rgb(202, 202, 202);
     height: 30px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
 }
 
 #address {
@@ -87,18 +87,18 @@ body {
 /* Create Post Allergies */
 
 #create-post-allergies {
+    border: 0.5px solid rgb(202, 202, 202);
     margin-top: 5px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
     padding: 10px;
 }
 
 #create-post-allergies input {
+    background-color: rgb(242, 255, 248);
     margin-right: 20px;
     height: 16px;
     width: 16px;
     vertical-align: middle;
-    background-color: rgb(242, 255, 248);
     
 }
 
@@ -134,11 +134,11 @@ body {
 }
 
 #amount-container input {
+    border: 0.5px solid rgb(202, 202, 202);
     width: 65px;
     height: 23px;
     margin-left: 10px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
 }
 
 /* Create Post Max */
@@ -154,18 +154,18 @@ body {
 }
 
 #create-post-max-container input {
+    border: 0.5px solid rgb(202, 202, 202);
     width: 50px;
     height: 23px;
     margin-left: 10px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202);
 
 }
 
 #date-and-time input {
+    border: 0.5px solid rgb(202, 202, 202)
     height: 23px;
     border-radius: 5px;
-    border: 0.5px solid rgb(202, 202, 202)
 }
 
 
@@ -177,11 +177,11 @@ body {
 }
 
 #create-post-button button {
+    background-color: rgb(190, 209, 177);
+    border: 0px solid rgb(190, 209, 177);
     height: 35px;
     width: 90px;
     border-radius: 8px;
-    background-color: rgb(190, 209, 177);
-    border: 0px solid rgb(184, 231, 203);
 }
 
 #create-post-button button:hover {
