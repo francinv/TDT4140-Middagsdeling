@@ -30,7 +30,7 @@ class MiddagDetailView(DetailView):
 
 class MiddagCreateView(CreateView):
     model = Middag
-    fields = ['title', 'content', 'guests', 'sharing', 'allergener']
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_number']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -39,7 +39,7 @@ class MiddagCreateView(CreateView):
 
 class MiddagUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Middag
-    fields = ['title', 'content', 'guests', 'sharing', 'allergener']
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_number']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
