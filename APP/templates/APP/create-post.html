@@ -1,27 +1,12 @@
+{% extends 'APP/base.html' %}
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block links %}
     <link rel="stylesheet" type="text/css" href="{% static '/css/create-post.css' %}">
     <title>Create Post</title>
-</head>
-<body>
-    <!-- Header -->
-    <div class="header">
-        <div class="header-title-container">
-            <h1>MealShare</h1>
-        </div>
-        <div class="navbar">
-            <div class="navbar-button"><p>Log in</p></div>
-            <div class="navbar-button"><p>Register</p></div>
-            <div class="navbar-button"><p>Admin</p></div>
-        </div>
-    </div>
-    <!-- Header end -->
+    {% endblock links %}
+
+    {% block content %}
     <!-- Create post -->
     <div id="create-post-container">
         <form method="POST">
@@ -104,5 +89,4 @@
     </div>
     <!-- Create post end -->
     <script src="{% static '/js/create-post.js' %}"></script>
-</body>
-</html>
+    {% endblock content %}

@@ -8,3 +8,6 @@ def home(request):
 
 def create_post(request):
     return render(request, 'APP/create-post.html')
+
+def base(request):
+    return render(request, 'APP/base.html')
