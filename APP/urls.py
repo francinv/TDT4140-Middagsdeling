@@ -1,10 +1,11 @@
 from django.urls import path
+
 from .views import (
     MiddagListView,
     MiddagDeleteView,
     MiddagUpdateView,
     MiddagCreateView,
-    MiddagDetailView
+    MiddagDetailView,
 )
 
 urlpatterns = [
