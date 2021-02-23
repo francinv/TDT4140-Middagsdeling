@@ -26,14 +26,26 @@
     <div id="create-post-container">
         <form method="POST">
             <h3>CREATE EVENT</h3>
+            <!-- Title input -->
             <div class="input-container" id="create-post-title-container">
                 <label for="create-post-title">Title</label>
                 <input type="text" id="create-post-title" name="create-post-title">
             </div>
+            <!-- Description input -->
             <div class="input-container" id="create-post-description-container">
                 <label for="create-post-description">Description</label>
                 <textarea type="textarea" id="create-post-description" name="create-post-description"  rows="4" cols="20"></textarea>
             </div>
+            <!-- Address input -->
+            <div class="input-container" id="create-post-address-container">
+                <label for="create-post-address">Address</label>
+                <div id="create-post-address">
+                    <input type="text" id="address" name="address" placeholder=" example: Baker Street 221b">
+                    <input type="text" id="postnr" name="postnr" placeholder=" Postal code">
+                    <input type="text" id="postloc" name="postloc" placeholder=" Location">
+                </div>
+            </div>
+            <!-- Allergies input -->
             <div class="input-container" id="create-post-allergies-container">
                 <label for="create-post-allergies">Contains (Allergies)</label>
                 <div id="create-post-allergies">
@@ -53,16 +65,44 @@
                     <input type="checkbox" id="soy" name="soy">
                 </div>
             </div>
-            <div class="input-container" id="create-post-max-container">
-                <label for="create-post-max">Guest limit</label>
-                <input type="number" id="create-post-max" name="create-post-max">
+            <!-- Share? -->
+            <div class="input-container" id="create-post-share-container">
+                <div id="share">
+                    <label for="create-post-share">Share?</label>
+                    <div id="create-post-share">
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="yes" name="share" value="yes" onclick="showDinnerCost()">
+                        <label for="no">No</label>
+                        <input type="radio" id="no" name="share" value="no" onclick="hideDinnerCost()">
+                    </div>
+                </div>
+                <div id="amount-container">
+                    <label for="amount" class="hidden">Dinner cost (local currency): </label>
+                    <input type="number" id="amount" name="amount" placeholder="XXX.XX (local currency)" class="hidden">
+                </div>
             </div>
+            <!-- Date and Guest limit input -->
+            <div class="input-container" id="data-and-guest-limit-container">
+                <div id="date">
+                    <label for="date-and-time">Date and time</label>
+                    <div id="date-and-time">
+                        <input type="date">
+                        <input type="time">
+                    </div>
+                </div>
+                <div id="create-post-max-container">
+                    <label for="create-post-max">Guest limit</label>
+                    <input type="number" id="create-post-max" name="create-post-max">
+                </div>
+
+            </div>
+            <!-- Submit button -->
             <div id="create-post-button">
                 <button type="submit">Submit</button>
             </div>
          </form>
     </div>
-
     <!-- Create post end -->
+    <script src="{% static '/js/create-post.js' %}"></script>
 </body>
 </html>

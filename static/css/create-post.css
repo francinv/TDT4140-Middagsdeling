@@ -14,10 +14,11 @@ body {
 
 .header {
     width: 100%;
-    height: 70px;
-    background-color: #597D35;
+    height: 60px;
+    background-color: #4b7a1b;
     display: flex;
     justify-content: space-between;
+    color: whitesmoke;
   }
   
   /* Title */
@@ -63,7 +64,7 @@ body {
     margin: 35px auto;
     width: 700px;
     height: 588px;
-    background-color: rgb(207, 240, 220);
+    background-color: rgb(206, 233, 186);
     border-radius: 8px;
 }
 
@@ -100,6 +101,32 @@ body {
     border: 0.5px solid rgb(202, 202, 202);
 }
 
+/* Create Post Address */
+
+#create-post-address {
+    display: flex;
+    justify-content: space-between;
+}
+
+#create-post-address input {
+    height: 30px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(202, 202, 202);
+}
+
+#address {
+    width: 50%;
+}
+
+#postnr {
+    width: 17%;
+}
+
+#postloc {
+    width: 29%;
+}
+
+
 /* Create Post Allergies */
 
 #create-post-allergies {
@@ -125,15 +152,62 @@ body {
     display: flex;
 }
 
+/* Create Post Share */
+
+#create-post-share-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#share {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#amount-container {
+    display: flex;
+    display: none;
+}
+
+#amount-container label {
+    margin-right: 8px;
+}
+
+#amount-container input {
+    width: 65px;
+    height: 23px;
+    margin-left: 10px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(202, 202, 202);
+}
+
 /* Create Post Max */
+
+#data-and-guest-limit-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#create-post-max-container {
+    display: flex;
+    flex-direction: column;
+}
 
 #create-post-max-container input {
     width: 50px;
-    height: 20px;
+    height: 23px;
     margin-left: 10px;
     border-radius: 5px;
     border: 0.5px solid rgb(202, 202, 202);
 
+}
+
+#date-and-time input {
+    height: 23px;
+    border-radius: 5px;
+    border: 0.5px solid rgb(202, 202, 202)
 }
 
 
