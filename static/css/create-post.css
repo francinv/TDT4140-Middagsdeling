@@ -163,7 +163,7 @@ body {
 }
 
 #date-and-time input {
-    border: 0.5px solid rgb(202, 202, 202)
+    border: 0.5px solid rgb(202, 202, 202);
     height: 23px;
     border-radius: 5px;
 }
