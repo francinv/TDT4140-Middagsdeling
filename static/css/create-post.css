@@ -19,8 +19,9 @@ body {
     background-color: rgb(234, 246, 225);
     margin: 35px auto;
     width: 700px;
-    height: 588px;
+    height: auto;
     border-radius: 8px;
+    padding:1rem;
 }
 
 #create-post-container form {
@@ -93,79 +94,76 @@ body {
     padding: 10px;
 }
 
-#create-post-allergies input {
+#create-post-allergies input[type="checkbox"] {
     background-color: rgb(242, 255, 248);
-    margin-right: 20px;
     height: 16px;
     width: 16px;
-    vertical-align: middle;
-    
 }
 
 #create-post-allergies label {
     font-size: 13px;
+    margin-right: 1rem;
 }
 
-.checkbox-container {
+#id_allergener{
+    list-style-type: none;
     display: flex;
+    width:60%;
+    margin:auto;
+    padding-left: 0;
 }
 
 /* Create Post Share */
 
 #create-post-share-container {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
 }
 
 #share {
-    width: 30%;
     display: flex;
     justify-content: space-between;
 }
 
 #amount-container {
     display: flex;
-    display: none;
 }
 
-#amount-container label {
-    margin-right: 8px;
-}
 
-#amount-container input {
+#amount-container input, #create-post-share-container select {
     border: 0.5px solid rgb(202, 202, 202);
     width: 65px;
     height: 23px;
     margin-left: 10px;
     border-radius: 5px;
 }
-
 /* Create Post Max */
 
 #data-and-guest-limit-container {
+    width:100%;
     display: flex;
     justify-content: space-between;
 }
-
+#date{display: flex;}
 #create-post-max-container {
     display: flex;
-    flex-direction: column;
 }
 
 #create-post-max-container input {
     border: 0.5px solid rgb(202, 202, 202);
-    width: 50px;
+    width: 65px;
     height: 23px;
     margin-left: 10px;
     border-radius: 5px;
 
 }
 
-#date-and-time input {
+#date input {
     border: 0.5px solid rgb(202, 202, 202);
     height: 23px;
     border-radius: 5px;
+    margin-left: 10px
 }
 
 
@@ -187,6 +185,8 @@ body {
 #create-post-button button:hover {
     cursor: pointer;
 }
-
+#id_allergener{
+    list-style-type: none;
+}
 
 /* Main section end */
