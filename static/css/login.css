@@ -18,7 +18,6 @@ body {
     margin: 0;
 }
 
-/* Box of content, contains left div (leftContent) and right div (rightContent) */
 #id_pageContent {
     background-color: rgb(234, 246, 225);
     display: grid;
@@ -30,7 +29,7 @@ body {
 
 
 
-/* LEFT DIV (image-part) */
+/* LEFT DIV */
 
 #id_leftContent {
     background-color: rgb(234, 246, 225, 0);
@@ -38,6 +37,7 @@ body {
     position: relative;
     text-align: center;
     width: 380px;
+    background-color: rgb(207, 240, 220);
     margin:0;
 }
 
@@ -50,7 +50,6 @@ body {
     filter: opacity(70%);
 }
 
-/* H1 and img overlayed image in left div */
 /*
 #id_brandName {
     position: absolute;
@@ -76,7 +75,7 @@ body {
 
 
 
-/* RIGHT DIV (form-part) */
+/* RIGHT DIV */
 
 #rightContent {
     background-color: rgb(234, 246, 225, 0);
@@ -92,12 +91,17 @@ fieldset {
     border: 0;
 }
 
-/* Heading on form */
 legend {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: -10px;
+}
+
+.inputset {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
 }
 
 input {
@@ -114,7 +118,7 @@ input {
     margin-top: 20px;
 }
 
-label, input, small{
+input[type=text], input[type=number], input[type=password] small{
     width: 200px;
 }
 
@@ -125,7 +129,7 @@ label {
 
 button {
     background-color: rgb(190, 209, 177);
-    border: 0px;
+    border: 0px solid rgb(184, 231, 203);
     border-radius: 8px;
     outline: none;
     height: 40px;
@@ -143,4 +147,7 @@ button {
     text-align: center;
     padding: 0;
     margin-top: 10px;
+}
+#id_allergies{
+    list-style-type: none;
 }
