@@ -11,30 +11,7 @@
         <script data-dapp-detection="">
             !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
         </script>
-        <script>
-            var options = [];
 
-            $( '#id_allergies li' ).on( 'click', function( event ) {
-
-            var $target = $( event.currentTarget ),
-               val = $target.attr( 'data-value' ),
-               $inp = $target.find( 'input' ),
-               idx;
-
-            if ( ( idx = options.indexOf( val ) ) > -1 ) {
-                options.splice( idx, 1 );
-                setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
-            } else {
-                options.push( val );
-                setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
-            }
-
-            $( event.target ).blur();
-
-            console.log( options );
-            return false;
-            });
-        </script>
     </head>
     <body>
         <div id="id_pageContent">
@@ -73,10 +50,11 @@
                         <div id="id_setAllergyAddress" class="inputset">
                             <!-- Allergy -->
                             <div id="id_div_allergies" class="form-group">
-                                <label for="id_allergies" class=" requiredField">Allergener<span class="asteriskField">*</span></label>
-                                <div class="">
-                                    {{ form.allergies }}
-                                </div>
+                                <label for="id_allergies" class=" requiredField">Allergener<span class="asteriskField">*</span>
+                                    <div class="">
+                                        {{ form.allergies }}
+                                    </div>
+                                </label>
                             </div>
                             <!-- Address -->
                             <div id="id_div_address" class="form-group">
