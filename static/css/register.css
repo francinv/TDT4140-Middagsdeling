@@ -202,10 +202,6 @@ button {
     text-align: center;
     margin-top: 10px;
 }
-#id_allergies{
+#id_allergies {
     list-style-type: none;
-    display: flex;
-}
-#id_allergies li:nth-child(1), #id_allergies li:nth-child(2), #id_allergies li:nth-child(3), #id_allergies li:nth-child(4){
-    flex:1;
 }
