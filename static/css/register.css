@@ -204,19 +204,16 @@ button {
 }
 #id_allergies {
     list-style-type: none;
+    display:flex;
+    width: 95%;
+    padding-left:0;
+    margin:auto;
 }
 
 
 
 
 /* HOVER */
-
-ul {
-    list-style-type: circle;
-    margin-left: -22px;
-    width: 200px;
-    display: none;
-}
 
 #id_boxOnHOver { /* Hides the requirements for password */
     display: none;
