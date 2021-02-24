@@ -12,7 +12,7 @@ function addPlaceholder(){
     var address = document.getElementById('id_address');
     var postnr = document.getElementById('id_postnr');
     var poststed = document.getElementById('id_poststed');
-    address.placeholder = "Eksempelveien 1";
+    //address.placeholder = "Eksempelveien 1";
 }
 
 addPlaceholder()
