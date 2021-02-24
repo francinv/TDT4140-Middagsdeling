@@ -1,4 +1,5 @@
 {% extends "APP/base.html" %}
+{% load static %}
 {% block content %}
     <!-- Create post -->
     <div id="create-post-container">
@@ -74,4 +75,20 @@
         </form>
     </div>
     <!-- Create post end -->
+    <script>
+        function addPlaceholder(){
+            var address = document.getElementById('id_address');
+            var postnr = document.getElementById('id_postnr');
+            var poststed = document.getElementById('id_poststed');
+            var date_dinner = document.getElementById('id_date_of_dinner');
+            address.placeholder = "Nordre gate 1";
+            postnr.placeholder = "7011";
+            poststed.placeholder = "Trondheim";
+            date_dinner.placeholder = "2021-03-01 20:00"
+        }
+        addPlaceholder()
+
+    </script>
+    <script src="{% static '/js/create-post.js' %}"></script>
 {% endblock content %}
+
