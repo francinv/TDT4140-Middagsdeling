@@ -122,7 +122,7 @@ input {
     margin-top: 20px;
 }
 
-label, input, small{
+input[type=text], input[type=password], input[type=number], small{
     width: 200px;
 }
 
@@ -201,4 +201,7 @@ button {
 #id_signInText {
     text-align: center;
     margin-top: 10px;
+}
+#id_allergies {
+    list-style-type: none;
 }

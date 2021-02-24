@@ -1,14 +1,39 @@
-{% load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="no">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="{% static '/css/register.css' %}">
         <title>Registrer bruker</title>
         <script data-dapp-detection="">
             !function(){let e=!1;function n(){if(!e){const n=document.createElement("meta");n.name="dapp-detected",document.head.appendChild(n),e=!0}}if(window.hasOwnProperty("ethereum")){if(window.__disableDappDetectionInsertion=!0,void 0===window.ethereum)return;n()}else{var t=window.ethereum;Object.defineProperty(window,"ethereum",{configurable:!0,enumerable:!1,set:function(e){window.__disableDappDetectionInsertion||n(),t=e},get:function(){if(!window.__disableDappDetectionInsertion){const e=arguments.callee;e&&e.caller&&e.caller.toString&&-1!==e.caller.toString().indexOf("getOwnPropertyNames")||n()}return t}})}}();
+        </script>
+        <script>
+            var options = [];
+
+            $( '#id_allergies li' ).on( 'click', function( event ) {
+
+            var $target = $( event.currentTarget ),
+               val = $target.attr( 'data-value' ),
+               $inp = $target.find( 'input' ),
+               idx;
+
+            if ( ( idx = options.indexOf( val ) ) > -1 ) {
+                options.splice( idx, 1 );
+                setTimeout( function() { $inp.prop( 'checked', false ) }, 0);
+            } else {
+                options.push( val );
+                setTimeout( function() { $inp.prop( 'checked', true ) }, 0);
+            }
+
+            $( event.target ).blur();
+
+            console.log( options );
+            return false;
+            });
         </script>
     </head>
     <body>
@@ -48,7 +73,7 @@
                         <div id="id_setAllergyAddress" class="inputset">
                             <!-- Allergy -->
                             <div id="id_div_allergies" class="form-group">
-                                <label for="id_allergies" class=" requiredField">Allergier<span class="asteriskField">*</span></label>
+                                <label for="id_allergies" class=" requiredField">Allergener<span class="asteriskField">*</span></label>
                                 <div class="">
                                     {{ form.allergies }}
                                 </div>
@@ -112,6 +137,9 @@
                 </div>
             </div>
         </div>
+
+
+
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

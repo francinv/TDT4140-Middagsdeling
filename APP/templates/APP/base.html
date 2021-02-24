@@ -22,7 +22,6 @@
                 <div class="collapse navbar-collapse" id="navbarToggle">
                     <div class="navbar-nav">
                         <a class="nav-item nav-link" href="{% url 'APP-home' %}">Hjem</a>
-                        <a class="nav-item nav-link" href="#">Om oss</a>
                     </div>
                     <div class="navbar-nav navbar-right">
                         {% if user.is_authenticated %}
@@ -42,7 +41,7 @@
             <div class="col-md-8">
                 {% if messages %}
                     {% for message in messages %}
-                        <div class="aler" alert-{{ message.tags }}">
+                        <div class="alert" alert-{{ message.tags }}">
                             {{ message }}
                         </div>
                     {% endfor %}
