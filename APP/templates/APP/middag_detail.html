@@ -1,27 +1,35 @@
 {% extends "APP/base.html" %}
 
 {% block content %}
-    <article class="media content-section">
-            <div class="media-body">
+    <article class="content-section">
+        <div class="media-body">
+            <div class="meta-container">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'profile' %}">{{ object.author }}</a>
                     <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
                 </div>
                 {% if object.author == user %}
-                    <div>
-                        <a class="btn btn-secondary" href="{% url 'middag-update' object.id %}">Endre</a>
-                        <a class="btn btn-secondary" href="{% url 'middag-delete' object.id %}">Slett</a>
-                    </div>
+                <div class="delete-button-container">
+                    <a class="delete-button" href="{% url 'middag-update' object.id %}"><p>Endre</p></a>
+                    <a class="delete-button" href="{% url 'middag-delete' object.id %}"><p>Slett</p></a>
+                </div>
                 {% endif %}
+            </div>
             <div class="article-content">
-                <h2><a class="article-title">{{ object.title }}</a></h2>
-                <p class="article-content">{{ object.content }}</p>
-                <p class="article-content">{{ object.guests }}</p>
-                <p class="article-content">{{ object.sharing }}</p>
-                <p class="article-content">{{ object.allergener }}</p>
-                <p class="article-content"> {{ object.sharing_cost }}</p>
+                <div class="title-and-description">
+                    <h2><a class="article-title">{{ object.title }}</a></h2>
+                    <p class="article-content">{{ object.content }}</p>
+                </div>
+                <div class="various-content">
+                    <p class="article-content">Antall gjester: {{ object.guests }}</p>
+                    <p class="article-content">Deling: {{ object.sharing }}</p>
+                    <p class="article-content">Allergener: {{ object.allergener }}</p>
+                    <p class="article-content">Kostnad: {{ object.sharing_cost }}</p>
+                    <p class="article-content">Adresse: {{  object.address }}</p>
+                    <p class="article-content">Postnr: {{  object.postnr }}, {{  object.poststed }} </p>
+                </div>
             </div>
 
-            </div>
-        </article>
+        </div>
+    </article>
 {% endblock %}

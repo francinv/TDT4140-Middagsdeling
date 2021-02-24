@@ -1,7 +1,7 @@
 {% extends "APP/base.html" %}
 
 {% block content %}
-    {% for Middag in middager %}
+    {% comment %} {% for Middag in middager %}
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
@@ -12,6 +12,6 @@
                 <p class="article-content">{{ Middag.content }}</p>
             </div>
         </article>
-    {% endfor %}
+    {% endfor %} {% endcomment %}
 
 {% endblock %}
