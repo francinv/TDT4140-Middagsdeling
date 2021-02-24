@@ -11,7 +11,6 @@ from .models import Middag
 
 
 def home(request):
-    return render(request, 'APP/index.html')
     context = {
         'middager': Middag.objects.all()
     }
@@ -29,9 +28,9 @@ class MiddagDetailView(DetailView):
     model = Middag
 
 
-class MiddagCreateView(CreateView):
+class MiddagCreateView(LoginRequiredMixin, CreateView):
     model = Middag
-    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_number']
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_cost', 'address', 'postnr', 'poststed', 'date_of_dinner']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
@@ -40,7 +39,7 @@ class MiddagCreateView(CreateView):
 
 class MiddagUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Middag
-    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_number']
+    fields = ['title', 'content', 'guests', 'sharing', 'allergener', 'sharing_cost', 'address', 'postnr', 'poststed', 'date_of_dinner']
 
     def form_valid(self, form):
         form.instance.author = self.request.user
