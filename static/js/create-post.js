@@ -17,4 +17,12 @@ function showDinnerCost(dinnerSelect){
     }
 }
 
+function calculateCost(){
+    num1 = document.getElementById("middag_guests").value;
+    num2 = document.getElementById("middag_sharing_cost").value;
+    document.getElementById('sharing_cost_number').innerHTML = num2 / num1;
+}
+calculateCost();
 menu.addEventListener("change" ,showDinnerCost);
+
+
