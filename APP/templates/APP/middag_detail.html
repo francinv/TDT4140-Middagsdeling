@@ -1,7 +1,8 @@
 {% extends "APP/base.html" %}
+{% load static %}
 
 {% block content %}
-    <article class="media content-section">
+    <article class="media content-section" onload="calculate();">
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'profile' %}">{{ object.author }}</a>
@@ -13,15 +14,27 @@
                         <a class="btn btn-secondary" href="{% url 'middag-delete' object.id %}">Slett</a>
                     </div>
                 {% endif %}
-            <div class="article-content">
+            <div class="article-content" id="article-content-container">
                 <h2><a class="article-title">{{ object.title }}</a></h2>
-                <p class="article-content">{{ object.content }}</p>
-                <p class="article-content">{{ object.guests }}</p>
-                <p class="article-content">{{ object.sharing }}</p>
-                <p class="article-content">{{ object.allergener }}</p>
-                <p class="article-content"> {{ object.sharing_cost }}</p>
+                <p class="article-content" id="middag_content">{{ object.content }}</p>
+                <p class="article-content" id="middag_guests">{{ object.guests }}</p>
+                <p class="article-content" id="middag_sharing">{{ object.sharing }}</p>
+                <p class="article-content" id="middag_allergener">{{ object.allergener }}</p>
+                <p class="article-content" id="middag_sharing_cost"> {{ object.sharing_cost }}</p>
+                <p class="article-content" id="sharing_cost_number"></p>
             </div>
 
             </div>
-        </article>
+    </article>
+    <script>
+        function calculate(){
+        let num1 = document.getElementById('middag_sharing_cost');
+        let num2 = document.getElementById('middag_guests');
+        const num3 = num1 / num2;
+        console.log("HEI");
+        console.log(num3);
+        document.getElementById("sharing_cost_number").innerHTML = num3;
+        }
+    </script>
+
 {% endblock %}
