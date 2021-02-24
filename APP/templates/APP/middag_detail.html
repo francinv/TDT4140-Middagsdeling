@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block content %}
-    <article class="media content-section" onload="calculate();">
+    <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'profile' %}">{{ object.author }}</a>
@@ -16,25 +16,19 @@
                 {% endif %}
             <div class="article-content" id="article-content-container">
                 <h2><a class="article-title">{{ object.title }}</a></h2>
-                <p class="article-content" id="middag_content">{{ object.content }}</p>
-                <p class="article-content" id="middag_guests">{{ object.guests }}</p>
-                <p class="article-content" id="middag_sharing">{{ object.sharing }}</p>
-                <p class="article-content" id="middag_allergener">{{ object.allergener }}</p>
-                <p class="article-content" id="middag_sharing_cost"> {{ object.sharing_cost }}</p>
-                <p class="article-content" id="sharing_cost_number"></p>
+                <ul class="article-content" id="middag-detail content">
+                    <li class="article-content" id="middag_content"> {{ object.content }} </li>
+                    <li class="article-content" id="middag_guests"> {{ object.guests }} </li>
+                    <li class="article-content" id="middag_sharing"> {{ object.sharing }} </li>
+                    <li class="article-content" id="middag_allergener"> {{ object.allergener }} </li>
+                    <li class="article-content" id="middag_sharing_cost"> {{ object.sharing_cost }} </li>
+                    <li class="article-content" id="sharing_cost_number"></li>
+                </ul>
             </div>
 
             </div>
     </article>
-    <script>
-        function calculate(){
-        let num1 = document.getElementById('middag_sharing_cost');
-        let num2 = document.getElementById('middag_guests');
-        const num3 = num1 / num2;
-        console.log("HEI");
-        console.log(num3);
-        document.getElementById("sharing_cost_number").innerHTML = num3;
-        }
-    </script>
+
+    <script src="{% static '/js/create-post.js' %}"></script>
 
 {% endblock %}
