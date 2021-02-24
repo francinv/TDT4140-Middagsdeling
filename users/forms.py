@@ -4,7 +4,17 @@ from django.contrib.auth.forms import UserCreationForm
 
 class UserRegisterForm(UserCreationForm):
     name = forms.CharField(label='Fullt navn')
-    allergies = forms.CharField(label='Allergier')
+    ALLERGIES_CHOICES=[
+        ('gluten', 'Gluten'),
+        ('laktose', 'Laktose'),
+        ('egg', 'Egg'),
+        ('nøtter', 'Nøtter'),
+    ]
+    allergies = forms.MultipleChoiceField(
+        required=True,
+        widget=forms.CheckboxSelectMultiple,
+        choices=ALLERGIES_CHOICES
+    )
     address = forms.CharField(label='Gatenavn og husnummer')
     postnr = forms.IntegerField(label='Postnummer')
     poststed = forms.CharField(label='Sted')

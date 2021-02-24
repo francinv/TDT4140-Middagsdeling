@@ -18,6 +18,7 @@ body {
     margin: 0;
 }
 
+/* Box of content, contains left div (leftContent) and right div (rightContent) */
 #id_pageContent {
     background-color: rgb(234, 246, 225);
     display: grid;
@@ -29,7 +30,7 @@ body {
 
 
 
-/* LEFT DIV */
+/* LEFT DIV (image-part) */
 
 #id_leftContent {
     overflow: hidden;
@@ -49,6 +50,7 @@ body {
     filter: opacity(70%);
 }
 
+/* H1 and img overlayed image in left div */ 
 /*
 #id_brandName {
     position: absolute;
@@ -75,7 +77,7 @@ body {
 
 
 
-/* RIGHT DIV */
+/* RIGHT DIV (form-part) */
 
 #rightContent {
     background-color: rgb(234, 246, 225, 0);
@@ -91,6 +93,7 @@ fieldset {
     border: 0;
 }
 
+/* Heading on form */
 legend {
     text-transform: uppercase;
     font-weight: bold;
@@ -98,6 +101,7 @@ legend {
     margin-bottom: -10px;
 }
 
+/* Inputs grouped by sets horisontally. Ex: username and full name in same inputset. */
 .inputset {
     display: flex;
     justify-content: space-between;
@@ -113,11 +117,12 @@ input {
     padding-left: 8px;
 }
 
+/* Grouped label, inputfield and small */
 .form-group {
     margin-top: 20px;
 }
 
-label, input, small{
+input[type=text], input[type=password], input[type=number], small{
     width: 200px;
 }
 
@@ -166,6 +171,16 @@ label {
     width: 200px;
 }
 
+
+/*
+#signDiv {
+    width: 220px;
+    position: relative;
+    margin-top: 40px;
+    margin-right: 20px;
+}
+*/
+
 button {
     background-color: rgb(190, 209, 177);
     border: 0px solid rgb(184, 231, 203);
@@ -186,6 +201,9 @@ button {
 #id_signInText {
     text-align: center;
     margin-top: 10px;
+}
+#id_allergies {
+    list-style-type: none;
 }
 
 
