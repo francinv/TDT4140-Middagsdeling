@@ -1,16 +1,77 @@
 {% extends "APP/base.html" %}
-
 {% block content %}
-    <div class="content-section">
+    <!-- Create post -->
+    <div id="create-post-container">
+
         <form method="POST">
             {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Middag</legend>
-                {{ form }}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Post</button>
+            <h3>OPPRETT MIDDAG</h3>
+            <!-- Title input -->
+            <div class="input-container" id="create-post-title-container">
+                <label for="title">Tittel
+                    <div> {{ form.title }} </div>
+                </label>
+            </div>
+            <!-- Description input -->
+            <div class="input-container" id="create-post-description-container">
+                <label for="content">Beskrivelse
+                    <div> {{ form.content }} </div>
+                </label>
+            </div>
+            <!-- Address input -->
+            <div class="input-container" id="create-post-address-container">
+                <div id="create-post-address">
+                    <label for="address">Gate
+                        <div> {{ form.address }} </div>
+                    </label>
+                    <label for="postnr">Postnr
+                        <div> {{ form.postnr }} </div>
+                    </label>
+                    <label for="poststed">Poststed
+                        <div> {{ form.poststed }} </div>
+                    </label>
+                </div>
+            </div>
+            <!-- Allergies input -->
+            <div class="input-container" id="create-post-allergies-container">
+                <label for="allergener">Allergener
+                    <div id="create-post-allergies">
+                        {{ form.allergener }}
+                    </div>
+                </label>
+            </div>
+            <!-- Share? -->
+            <div class="input-container" id="create-post-share-container">
+                <div id="share">
+                    <label for="sharing">Ønsker du å dele utgiftene?</label>
+                        <div id="create-post-share"> {{ form.sharing }} </div>
+
+                </div>
+                <div id="amount-container">
+                    <label for="sharing_cost" class="hidden">Kostnader (NOK):</label>
+                        <div> {{ form.sharing_cost }} </div>
+
+                </div>
+            </div>
+            <!-- Date and Guest limit input -->
+            <div class="input-container" id="data-and-guest-limit-container">
+                <div id="date">
+                    <label for="date_of_dinner">Når skal middagen ta sted?</label>
+                        {{ form.date_of_dinner }}
+
+                </div>
+                <div id="create-post-max-container">
+                    <label for="guests">Antall gjester:</label>
+                        {{ form.guests }}
+
+                </div>
+
+            </div>
+            <!-- Submit button -->
+            <div id="create-post-button">
+                <button type="submit">Submit</button>
             </div>
         </form>
     </div>
-{% endblock %}
+    <!-- Create post end -->
+{% endblock content %}
