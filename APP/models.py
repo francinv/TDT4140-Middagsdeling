@@ -27,9 +27,12 @@ class Middag(models.Model):
         choices=sharing_choices,
         default='ja',
     )
-    sharing_number = models.PositiveSmallIntegerField()
+    sharing_cost = models.PositiveSmallIntegerField()
     allergener = MultiSelectField(choices=allergener_choices)
-
+    address = models.CharField(max_length=200, default=None)
+    postnr = models.PositiveSmallIntegerField(default=None)
+    poststed = models.CharField(max_length=200, default=None)
+    date_of_dinner = models.DateTimeField(default=None)
 
     def __str__(self):
         return self.title
