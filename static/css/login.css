@@ -118,7 +118,7 @@ input {
     margin-top: 20px;
 }
 
-input[type=text], input[type=number], input[type=password] small{
+input[type=text], input[type=number], input[type=password], small{
     width: 200px;
 }
 
