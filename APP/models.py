@@ -27,7 +27,7 @@ class Middag(models.Model):
         choices=sharing_choices,
         default='ja',
     )
-    sharing_cost = models.PositiveSmallIntegerField()
+    sharing_cost = models.PositiveSmallIntegerField(blank=True, null=True)
     allergener = MultiSelectField(choices=allergener_choices)
     address = models.CharField(max_length=200, default=None)
     postnr = models.PositiveSmallIntegerField(default=None)
