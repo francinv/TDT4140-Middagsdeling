@@ -1,0 +1,56 @@
+.content-section {
+    background-color: rgb(234, 246, 225);
+    height: 500px;
+    width: 60%;
+    margin: 35px auto;
+}
+
+.media-body {
+    border-bottom: 1px solid rgb(199, 195, 195);
+    padding: 4px;
+    
+}
+
+.meta-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.delete-button-container {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-button {
+    text-decoration: none;
+    text-align: center;
+}
+
+.delete-button p{
+    background-color: rgb(190, 209, 177);
+    border: 0px solid rgb(190, 209, 177);
+    color: black;
+    width: 50px;
+    height: 20px;
+    border-radius: 3px;
+}
+
+.article-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-and-description {
+    width: 45%;
+}
+
+
+.various-content {
+    width: 45%;
+}
+
+.various-content p {
+    margin-bottom: 2px;
+}

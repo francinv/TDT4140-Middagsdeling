@@ -1,0 +1,31 @@
+#delete_legend { /* Kan evt. slås sammen med fieldset i register/login.css */
+    border: 0;
+}
+
+#confirmContent {
+    padding-top: 80px;
+}
+
+#confirmForm {
+    text-align: center;
+}
+
+#confirmButtons-container {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    margin: 10px 0 0 0;
+}
+
+.confirmPage-buttons {
+    margin-left: 20px;
+    display: relative;
+    width: max-content;
+    padding: 5px;
+    text-decoration: none;
+    text-align: center;
+    background-color: lightgrey;
+    border: 0.2px solid grey;
+    color: rgb(17, 17, 17);
+    font-size: 15px;
+}
