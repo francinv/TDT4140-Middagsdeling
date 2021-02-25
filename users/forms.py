@@ -9,6 +9,7 @@ class UserRegisterForm(UserCreationForm):
         ('laktose', 'Laktose'),
         ('egg', 'Egg'),
         ('nøtter', 'Nøtter'),
+        ('ingen', 'Ingen'),
     ]
     allergies = forms.MultipleChoiceField(
         required=True,
