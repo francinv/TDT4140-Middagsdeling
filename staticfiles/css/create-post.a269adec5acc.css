@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+
+* {
+    margin: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+body {
+    background-color: rgb(193, 228, 166);
+    background-size: 100% 100%;
+    color: rgb(17, 17, 17);
+}
+
+/* Main section */
+
+/* Create Post section */
+
+#create-post-container {
+    background-color: rgb(234, 246, 225);
+    margin: 35px auto;
+    width: 700px;
+    height: auto;
+    border-radius: 8px;
+    padding:1rem;
+}
+
+#create-post-container form {
+    margin: auto;
+    width: 90%;
+    padding-top: 10px;
+}
+
+#create-post-container h3 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+/* Create Post Title */
+
+#create-post-title-container input {
+    background-color: rgb(242, 255, 248);
+    border: 0.5px solid rgb(202, 202, 202);
+    width: 99%;
+    height: 30px;
+    border-radius: 5px;
+}
+
+/* Create Post Description */
+
+#create-post-description-container textarea {
+    background-color: rgb(242, 255, 248);
+    border: 0.5px solid rgb(202, 202, 202);
+    width: 99%;
+    resize: none;
+    border-radius: 5px;
+}
+
+/* Create Post Address */
+
+#create-post-address {
+    display: flex;
+    justify-content: space-between;
+}
+
+#create-post-address input {
+    border: 0.5px solid rgb(202, 202, 202);
+    height: 30px;
+    border-radius: 5px;
+}
+
+#address {
+    width: 50%;
+}
+
+#postnr {
+    width: 17%;
+}
+
+#postloc {
+    width: 29%;
+}
+
+
+/* Create Post Allergies */
+
+#create-post-allergies {
+    border: 0.5px solid rgb(202, 202, 202);
+    margin-top: 5px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#create-post-allergies input[type="checkbox"] {
+    background-color: rgb(242, 255, 248);
+    height: 16px;
+    width: 16px;
+}
+
+#create-post-allergies label {
+    font-size: 13px;
+    margin-right: 1rem;
+}
+
+#id_allergener{
+    list-style-type: none;
+    display: flex;
+    width:60%;
+    margin:auto;
+    padding-left: 0;
+}
+
+/* Create Post Share */
+
+#create-post-share-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#share {
+    display: flex;
+    justify-content: space-between;
+}
+
+#amount-container {
+    display: flex;
+}
+
+
+#amount-container input, #create-post-share-container select {
+    border: 0.5px solid rgb(202, 202, 202);
+    width: 65px;
+    height: 23px;
+    margin-left: 10px;
+    border-radius: 5px;
+}
+/* Create Post Max */
+
+#data-and-guest-limit-container {
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+#date{display: flex;}
+#create-post-max-container {
+    display: flex;
+}
+
+#create-post-max-container input {
+    border: 0.5px solid rgb(202, 202, 202);
+    width: 65px;
+    height: 23px;
+    margin-left: 10px;
+    border-radius: 5px;
+
+}
+
+#date input {
+    border: 0.5px solid rgb(202, 202, 202);
+    height: 23px;
+    border-radius: 5px;
+    margin-left: 10px
+}
+
+
+/* Create Post Button */
+
+#create-post-button {
+    display: flex;
+    justify-content: center;
+}
+
+#create-post-button button {
+    background-color: rgb(190, 209, 177);
+    border: 0px solid rgb(190, 209, 177);
+    height: 35px;
+    width: 90px;
+    border-radius: 8px;
+}
+
+#create-post-button button:hover {
+    cursor: pointer;
+}
+#id_allergener{
+    list-style-type: none;
+}
+
+/* Main section end */
