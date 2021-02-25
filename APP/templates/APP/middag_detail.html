@@ -2,33 +2,35 @@
 {% load static %}
 
 {% block content %}
-    <article class="media content-section">
-            <div class="media-body">
+    <article class="content-section">
+        <div class="media-body">
+            <div class="meta-container">
                 <div class="article-metadata">
                     <a class="mr-2" href="{% url 'profile' %}">{{ object.author }}</a>
                     <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
                 </div>
                 {% if object.author == user %}
-                    <div>
-                        <a class="btn btn-secondary" href="{% url 'middag-update' object.id %}">Endre</a>
-                        <a class="btn btn-secondary" href="{% url 'middag-delete' object.id %}">Slett</a>
-                    </div>
+                <div class="delete-button-container">
+                    <a class="delete-button" href="{% url 'middag-update' object.id %}"><p>Endre</p></a>
+                    <a class="delete-button" href="{% url 'middag-delete' object.id %}"><p>Slett</p></a>
+                </div>
                 {% endif %}
-            <div class="article-content" id="article-content-container">
-                <h2><a class="article-title">{{ object.title }}</a></h2>
-                <ul class="article-content" id="middag-detail content">
-                    <li class="article-content" id="middag_content"> {{ object.content }} </li>
-                    <li class="article-content" id="middag_guests"> {{ object.guests }} </li>
-                    <li class="article-content" id="middag_sharing"> {{ object.sharing }} </li>
-                    <li class="article-content" id="middag_allergener"> {{ object.allergener }} </li>
-                    <li class="article-content" id="middag_sharing_cost"> {{ object.sharing_cost }} </li>
-                    <li class="article-content" id="sharing_cost_number"></li>
-                </ul>
+            </div>
+            <div class="article-content">
+                <div class="title-and-description">
+                    <h2><a class="article-title">{{ object.title }}</a></h2>
+                    <p class="article-content">{{ object.content }}</p>
+                </div>
+                <div class="various-content">
+                    <p class="article-content">Antall gjester: {{ object.guests }}</p>
+                    <p class="article-content">Deling: {{ object.sharing }}</p>
+                    <p class="article-content">Allergener: {{ object.allergener }}</p>
+                    <p class="article-content">Kostnad: {{ object.sharing_cost }}</p>
+                    <p class="article-content">Adresse: {{  object.address }}</p>
+                    <p class="article-content">Postnr: {{  object.postnr }}, {{  object.poststed }} </p>
+                </div>
             </div>
 
-            </div>
+        </div>
     </article>
-
-    <script src="{% static '/js/create-post.js' %}"></script>
-
 {% endblock %}

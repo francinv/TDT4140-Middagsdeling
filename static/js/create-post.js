@@ -25,4 +25,3 @@ function calculateCost(){
 calculateCost();
 menu.addEventListener("change" ,showDinnerCost);
 
-

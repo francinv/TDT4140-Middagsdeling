@@ -2,15 +2,16 @@
 
 {% block content %}
     <div class="content-section">
-        <form method="POST">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Slette middag</legend>
-                <h2>Er du sikker på at du vil slette denne middagen? "{{ object.title }}"</h2>
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Slett</button>
-                <a class="btn btn-outline-secondary" href="{% url 'middag-detail' object.id %}">Kanseller</a>
+        <form id="confirmForm" method="POST">
+            <div id="confirmContent">
+                {% csrf_token %}
+                <fieldset id="delete_legend" class="form-group">
+                    <h2>Er du sikker på at du vil slette denne middagen: '{{ object.title }}'?</h2>
+                </fieldset>
+                <div id="confirmButtons-container">
+                    <button class="confirmPage-buttons" class="btn btn-outline-info" type="submit">Ja, slett</button>
+                    <a class="confirmPage-buttons" href="{% url 'middag-detail' object.id %}"><p>Nei, gå tilbake</p></a>
+                </div>
             </div>
         </form>
     </div>
