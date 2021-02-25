@@ -59,8 +59,13 @@
                 <!-- Register instead -->
                 <div id="id_loginText" class="border-top pt-3">
                     <small class="text-muted">
-                        Don't Have An Account? <a class="ml-2" href="{% url 'register' %}">Register now</a>
+                        Har du ikke konto? <a class="ml-2" href="{% url 'register' %}">Registrer nå</a>
                     </small>
+                </div>
+                <div>
+                    {% if form.errors %}
+                        <p>Ikke riktig brukernavn eller passord.</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
