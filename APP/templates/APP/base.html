@@ -87,10 +87,10 @@
         </div>
         <div class="navbar">
             <a href="{% url 'middag-create' %}" class="navbar-button"><p>Ny annonse</p></a>
-            <a href="#" class="navbar-button"><p>Mine annonser</p></a>
+            {% comment %}<a href="#" class="navbar-button"><p>Mine annonser</p></a>{% endcomment %}
             {% if user.is_authenticated %}
-                <a class="navbar-button" href="{% url 'profile' %}"> Profil </a>
-                <a class="navbar-button" href="#">Logg ut</a>
+                {% comment %}<a class="navbar-button" href="{% url 'profile' %}"> Profil </a>{% endcomment %}
+                <a class="navbar-button" href="{% url 'logout' %}">Logg ut</a>
             {% else %}
                 <a class="navbar-button" href="{% url 'login' %}">Logg inn</a>
                 <a class="navbar-button" href="{% url 'register' %}">Registrer</a>
