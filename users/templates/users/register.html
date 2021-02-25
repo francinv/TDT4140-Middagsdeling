@@ -104,13 +104,18 @@
                     <!-- Sign up submit-button -->
                     <div id="id_signUpButton" class="form-group">
                         <button class="btn btn-outline-info" type="submit">Registrer</button>
+                        <small>
+                            {% if form.errors %}
+                                <p>Det er noe feil med skjemaet prøv igjen!</p>
+                            {% endif %}
+                        </small>
                     </div>
                 </form>
 
                 <!-- Login instead -->
                 <div id="id_signInText" class="border-top pt-3">
                     <small class="text-muted">
-                        Already Have An Account? <a class="ml-2" href="{% url 'login' %}">Sign In</a>
+                        Har du allerede en bruker? <a class="ml-2" href="{% url 'login' %}">Logg inn</a>
                     </small>
                 </div>
             </div>
