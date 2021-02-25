@@ -1,4 +1,5 @@
 {% extends "APP/base.html" %}
+{% load static %}
 
 {% block content %}
     <article class="media content-section">
@@ -13,15 +14,21 @@
                         <a class="btn btn-secondary" href="{% url 'middag-delete' object.id %}">Slett</a>
                     </div>
                 {% endif %}
-            <div class="article-content">
+            <div class="article-content" id="article-content-container">
                 <h2><a class="article-title">{{ object.title }}</a></h2>
-                <p class="article-content">{{ object.content }}</p>
-                <p class="article-content">{{ object.guests }}</p>
-                <p class="article-content">{{ object.sharing }}</p>
-                <p class="article-content">{{ object.allergener }}</p>
-                <p class="article-content"> {{ object.sharing_number }}</p>
+                <ul class="article-content" id="middag-detail content">
+                    <li class="article-content" id="middag_content"> {{ object.content }} </li>
+                    <li class="article-content" id="middag_guests"> {{ object.guests }} </li>
+                    <li class="article-content" id="middag_sharing"> {{ object.sharing }} </li>
+                    <li class="article-content" id="middag_allergener"> {{ object.allergener }} </li>
+                    <li class="article-content" id="middag_sharing_cost"> {{ object.sharing_cost }} </li>
+                    <li class="article-content" id="sharing_cost_number"></li>
+                </ul>
             </div>
 
             </div>
-        </article>
+    </article>
+
+    <script src="{% static '/js/create-post.js' %}"></script>
+
 {% endblock %}
