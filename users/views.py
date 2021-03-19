@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, SendMessageForm
+from .models import Message
 
 
 def register(request):
@@ -16,6 +17,24 @@ def register(request):
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
+
+def send_message(request):
+    if request.method == 'POST':
+        form = SendMessageForm(request.POST)
+        if form.is_valid():
+            fs = form.save(commit=False)
+            fs.user = request.user
+            fs.save()
+            return redirect('APP-home')
+    else:
+        form = SendMessageForm()
+    return render(request, 'users/send_message.html', {'form': form})
+
+def messages(request):
+    context = {
+        'messages': Message.objects.all()
+    }
+    return render(request, 'users/messages.html', context)
 
 @login_required
 def profile(request):
