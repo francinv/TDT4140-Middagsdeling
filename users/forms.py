@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from .models import Message
 
+
 class UserRegisterForm(UserCreationForm):
     name = forms.CharField(label='Fullt navn')
     ALLERGIES_CHOICES=[
@@ -25,6 +26,7 @@ class UserRegisterForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['username', 'name', 'allergies', 'address', 'postnr', 'poststed', 'password1', 'password2']
+
 
 class SendMessageForm(forms.ModelForm):
     class Meta:

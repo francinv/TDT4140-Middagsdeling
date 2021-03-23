@@ -8,6 +8,7 @@ sharing_choices = [
         ('ja', 'Ja'),
         ('no', 'Nei'),
 ]
+
 allergener_choices =[
         ('GLUTEN', 'Gluten'),
         ('LAKTOSE', 'Laktose'),
@@ -15,6 +16,7 @@ allergener_choices =[
         ('NØTTER', 'Nøtter'),
         ('INGEN', 'Ingen'),
 ]
+
 
 class Middag(models.Model):
     title = models.CharField(max_length=125)

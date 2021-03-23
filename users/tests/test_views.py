@@ -1,9 +1,5 @@
 from django.test import TestCase, Client
 from django.urls import reverse
-from users.views import register
-from middagsdeling import urls
-
-import json
 
 
 class TestViews(TestCase):
