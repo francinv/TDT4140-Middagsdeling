@@ -34,7 +34,7 @@ def send_message(request):
 
 def user_messages(request):
     context = {
-        'messages': Message.objects.all()
+        'messages': Message.objects.filter(author=request.user) | Message.objects.filter(to_user=request.user)
     }
     return render(request, 'users/messages.html', context)
 
