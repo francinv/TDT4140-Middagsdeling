@@ -24,7 +24,7 @@ def send_message(request):
         form = SendMessageForm(request.POST)
         if form.is_valid():
             fs = form.save(commit=False)
-            fs.user = request.user
+            fs.author = request.user
             fs.save()
             return redirect('APP-home')
     else:
