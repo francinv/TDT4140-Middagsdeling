@@ -7,7 +7,7 @@ from .models import Message
 
 class UserRegisterForm(UserCreationForm):
     name = forms.CharField(label='Fullt navn')
-    ALLERGIES_CHOICES=[
+    ALLERGIES_CHOICES = [
         ('gluten', 'Gluten'),
         ('laktose', 'Laktose'),
         ('egg', 'Egg'),
@@ -31,4 +31,4 @@ class UserRegisterForm(UserCreationForm):
 class SendMessageForm(forms.ModelForm):
     class Meta:
         model = Message
-        fields =['title','to_user', 'message']
+        fields = ['title', 'to_user', 'message']
