@@ -1,0 +1,43 @@
+.middagsannonse {
+    background-color: rgb(234, 246, 225);
+    height: 100%;
+    width: 60%;
+    margin: 35px auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.middags-content {
+    padding: 4px;
+    line-height: 1.8;
+}
+
+.meta-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+
+.article-content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-and-description {
+    width: 45%;
+}
+
+
+.various-content {
+    width: 45%;
+}
+
+.various-content p {
+    margin-bottom: 2px;
+}
+
+#Header-annonse {
+    text-align: center;
+    margin-top: 20px;
+}

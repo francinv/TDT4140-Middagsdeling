@@ -1,0 +1,18 @@
+{% extends "APP/base.html" %}
+
+{% block content %}
+    <div class="content-section">
+        <form id="confirmForm" method="POST">
+            <div id="confirmContent">
+                {% csrf_token %}
+                <fieldset id="delete_legend" class="form-group">
+                    <h2>Er du sikker på at du vil melde deg på denne middagen: '{{ object.title }}'?</h2>
+                </fieldset>
+                <div id="confirmButtons-container">
+                    <button class="confirmPage-buttons" class="btn btn-outline-info" type="submit">Ja, meld meg på</button>
+                    <a class="confirmPage-buttons" href="{% url 'middag-detail' object.id %}"><p>Nei, gå tilbake</p></a>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
