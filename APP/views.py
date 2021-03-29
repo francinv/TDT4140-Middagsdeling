@@ -61,3 +61,6 @@ class MiddagDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
         if self.request.user == post.author:
             return True
         return False
+
+
+#TODO: Returnere få til å vise view middag_confirm_join
