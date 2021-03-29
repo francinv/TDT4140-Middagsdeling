@@ -6,7 +6,6 @@ from django.views.generic import (
     CreateView,
     UpdateView,
     DeleteView
-    JoinView,
 )
 from .models import Middag
 
@@ -63,15 +62,5 @@ class MiddagDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
             return True
         return False
 
-
-class MiddagJoinView(LoginRequiredMixin, JoinView):
-    model = Middag
-    success_url = '/home'
-
-    def test_func(self):
-        post = self.get_object()
-        if self.request.user == post.author:
-            return True
-        return False
 
 #TODO: Returnere få til å vise view middag_confirm_join
