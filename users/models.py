@@ -15,7 +15,7 @@ class Profile(models.Model):
 
 class Message(models.Model):
     User = settings.AUTH_USER_MODEL
-    author = models.ForeignKey(User, null=True, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
     to_user = models.ForeignKey(User, related_name='receiver', on_delete=models.CASCADE)
     message = models.TextField()
