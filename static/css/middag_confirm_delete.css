@@ -3,7 +3,8 @@
 }
 
 #confirmContent {
-    padding-top: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 #confirmForm {
@@ -28,4 +29,6 @@
     border: 0.2px solid grey;
     color: rgb(17, 17, 17);
     font-size: 15px;
+    border-radius: 3px;
+    border-radius: 3px;
 }

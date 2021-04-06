@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block content %}
-    <h1 id="Header-annonse">Annonser</h1>
+    <div id="contentDiv">
+        <div id="messages_header">
+            <h1 class="meldingsheader">Annonser</h1>
+        </div>
+    </div>
     {% for Middag in middager %}
         <a href="{% url 'middag-detail' Middag.id %}">
             <article class="middagsannonse">
