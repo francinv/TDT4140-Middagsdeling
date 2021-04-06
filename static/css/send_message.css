@@ -1,0 +1,41 @@
+#send_message_form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: 35px auto;
+    align-items: center;
+    background-color: rgb(234, 246, 225);
+    border-radius: 8px;
+}
+
+#send_message_form input, select, textarea {
+    margin-bottom: 20px;
+    width: 80%;
+    border: 0.5px solid rgb(202, 202, 202);
+    height: 30px;
+    border-radius: 5px;
+}
+
+#send_message_form textarea {
+    height: 150px;
+}
+
+#send_message_form input[type=submit] {
+    background-color: rgb(190, 209, 177);
+    border: 0px solid rgb(190, 209, 177);
+    height: 35px;
+    width: 90px;
+    border-radius: 8px;
+}
+
+#send_message_form input[type=submit]:hover {
+    cursor: pointer;
+}
+
+#send_message_form label {
+    font-size: 20px;
+    width: 80%;
+}
+
+
+

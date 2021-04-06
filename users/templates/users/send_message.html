@@ -1,14 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <form action="" method="post">
+{% extends "APP/base.html" %}
+
+{% block content %}
+<div id="send_message_box">
+    <form id="send_message_form" action="" method="post">
+        <br>
+        <h1>Send melding</h1><br>
         {% csrf_token %}
             {{ form }}
         <input type="submit" value="Submit">
     </form>
-</body>
-</html>
+</div>
+{% endblock %}
+    

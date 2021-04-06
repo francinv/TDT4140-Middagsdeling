@@ -15,10 +15,15 @@
                     <a class="delete-button" href="{% url 'middag-delete' object.id %}"><p>Slett</p></a>
                 </div>
                 {% endif %}
+                {% if object.author != user %}
+                <div class="delete-button-container"> <!-- TODO: endre url til å linke til riktig view -->
+                    <a class="join-button" href="{% url 'middag-update' object.id %}"><p>Meld meg på</p></a>
+                </div>
+                {% endif %}
             </div>
             <div class="article-content">
                 <div class="title-and-description">
-                    <h2><a class="article-title">{{ object.title }}</a></h2>
+                    <h2><a class="article-title">{{ object.title }}</a></h2><br>
                     <p class="article-content">{{ object.content }}</p>
                 </div>
                 <div class="various-content">
