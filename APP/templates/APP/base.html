@@ -62,7 +62,7 @@
         /* Navbar */
 
         .navbar {
-            width: 600px;
+            width: 50%;
             display: flex;
             font-size: 1.2rem;
         }
@@ -91,10 +91,12 @@
             <a href="{% url 'APP-home' %}"><h1>MealShare</h1></a>
         </div>
         <div class="navbar">
-            <a href="{% url 'middag-create' %}" class="navbar-button"><p>Ny annonse</p></a>
             {% comment %}<a href="#" class="navbar-button"><p>Mine annonser</p></a>{% endcomment %}
             {% if user.is_authenticated %}
-                {% comment %}<a class="navbar-button" href="{% url 'profile' %}"> Profil </a>{% endcomment %}
+                <a class="navbar-button" href="{% url 'APP-home' %}">Hjem</a>
+                <a href="{% url 'middag-create' %}" class="navbar-button"><p>Ny annonse</p></a>
+                <a class="navbar-button" href="{% url 'messages' %}">Meldinger</a>
+                <a class="navbar-button" href="{% url 'profile' %}">Profil</a>
                 <a class="navbar-button" href="{% url 'logout' %}">Logg ut</a>
             {% else %}
                 <a class="navbar-button" href="{% url 'login' %}">Logg inn</a>

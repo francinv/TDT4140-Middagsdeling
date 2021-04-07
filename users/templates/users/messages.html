@@ -1,11 +1,17 @@
 {% extends "APP/base.html" %}
 
 {% block content %}
+    <div id="contentDiv">
+        <div id="messages_header">
+            <h1 class="meldingsheader">Mine meldinger</h1>
+            <a class="send_button" href="{% url 'send_message' %}">Send melding</a>
+        </div>
+    </div>
     {% for Message in messages %}
         <article class="media content-section">
             <div class="media-body">
                 <div class="article-metadata">
-                    <a class="mr-2" href="{% url 'profile' %}">{{ Message.author }}</a>
+                    <a class="mr-2" href="{% url 'profile' %}">{{ Message.author }}</a> til
                     <small class="text-muted">{{ Message.to_user }}</small>
                 </div>
                 <h2><a class="article-title" href="#">{{ Message.title }}</a></h2>

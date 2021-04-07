@@ -16,8 +16,8 @@
                 </div>
                 {% endif %}
                 {% if object.author != user %}
-                <div class="delete-button-container"> <!-- TODO: endre url til å linke til riktig view -->
-                    <a class="join-button" href="{% url 'middag-update' object.id %}"><p>Meld meg på</p></a>
+                <div class="delete-button-container">
+                    <a class="join-button" id="join-button"><p>Meld meg på</p></a>
                 </div>
                 {% endif %}
             </div>
@@ -28,7 +28,7 @@
                 </div>
                 <div class="various-content">
                     <p class="article-content">Antall gjester: {{ object.guests }}</p>
-                    <p class="article-content">Deling: {{ object.sharing }}</p>
+                    <p class="article-content">Dele utgifter: {{ object.sharing }}</p>
                     <p class="article-content">Allergener: {{ object.allergener }}</p>
                     <p class="article-content">Kostnad: {{ object.sharing_cost }}</p>
                     <p class="article-content">Adresse: {{  object.address }}</p>
@@ -39,4 +39,5 @@
 
         </div>
     </article>
+    <script src="{% static '/js/join-dinner.js' %}"></script>
 {% endblock %}
