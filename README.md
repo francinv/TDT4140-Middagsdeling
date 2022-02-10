@@ -126,10 +126,82 @@ You must have python installed.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-The App can be used to create a a community for meal sharing. First of all you have to create an user.
+The App can be used to create a community for meal sharing. First of all you have to create an user.
 
-***Page 1: Register page.***
+***Page 1: Register page***
+![Register][register_screenshot]
+To register an user, there are some fields to fill out (see attached picture):
+- Username
+- Full name
+- Street address 
+- Allergies
+- ZIP code
+- City
+- Password
 
+After user is successfully created, you can log in. (If any of the fields are incorrectly filled out, you will get an error message.)
+
+***Page 2: Homepage***
+![Homepage][homepage-screenshot]
+As you can see on the image, you will see a homepage, with a navbar and available meals. 
+
+_Navbar_
+
+The Navbar consists of:
+- MealShare logo:
+
+      By clicking this item, you will be sent back to the HomePage. 
+- Home (Hjem):
+
+      By clicking this item, you will be sent back to the HomePage. 
+- New dinner listing (Ny annonse):
+
+      This item will take you to a form for creating and dinner.
+- Messages (Meldinger):
+
+      This item will take you to messages sent by you in addition to messages sent to you.
+- Profile (Profil):
+
+      This item leads to the profile page for logged in user.
+- Log out (Logg ut):
+
+      This button wil log you out of the app, and redirect you to a logout page.
+
+_Available meals_
+
+This section consists of several meals added by the community. The meals can be clicked on for more details. After a meal are clicked you will be shown meal details. If the meal is created by you, you will have the possibility to change and delete. If it is created by some other in the community you will have the possibility to sign up for this meal.
+
+See the picture below:
+![Meal Detail][meal_detail_screenshot]
+
+***Page 3: New meal ad***
+![Create Meal][create_meal_screenshot]
+As seen in the picture, this is a page for creating a meal. After all of the fields are added correctly the meal will be created and you will see meal detail. 
+
+The fields:
+1. Title (Tittel)
+2. Description (Beskrivelse)
+3. Street (Gate)
+4. ZIP Code (Postnr)
+5. City (Poststed)
+6. Allergies (Allergener)
+7. Split the cost? (Dele utgifter)
+8. Cost (NOK)
+9. Date and time of dinner (Dato og tid)
+10. Amount of guests (Antall gjester)
+
+***Page 4: Messages***
+![Inbox][inbox_screenshot]
+This page is for messages sent by and to you. A message can be sent to a specific user by clicking `Send melding` button. You will be redirected to a simple form with 3 fields:
+1. Title
+2. To user: (Dropdown menu with users registered.)
+3. Message
+
+After submitting the message you will see that the new message has appeared. 
+
+***Page 5: Profile***
+![Profile][profile_screenshot]
+This page is a simple profile page, that gives you the possibility to see your information. You will see _username_, _name_, _allergies_ and address.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -185,6 +257,11 @@ Project Link: [https://github.com/francinv/TDT4140-Middagsdeling](https://github
 [linkedin-url]: https://linkedin.com/in/francinvincent
 [login-screenshot]: docs/login_page.png
 [homepage-screenshot]: docs/home_page.png
+[meal_detail_screenshot]: docs/meal_detail_page.png
+[create_meal_screenshot]: docs/create_meal_page.png
+[inbox_screenshot]: docs/inbox_page.png
+[profile_screenshot]: docs/profile_page.png
+[register_screenshot]: docs/register_page.png
 [html-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [css-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [python-badge]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
