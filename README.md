@@ -3,6 +3,8 @@
 ![html-badge]
 ![css-badge]
 ![python-badge]
+![django-badge]
+![javascript-badge]
 [![Contributors][contributors-shield]][contributors-url]
 [![Stargazers][stars-shield]][stars-url]
 [![MIT License][license-shield]][license-url]
@@ -124,9 +126,10 @@ You must have python installed.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+The App can be used to create a a community for meal sharing. First of all you have to create an user.
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+***Page 1: Register page.***
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -186,3 +189,4 @@ Project Link: [https://github.com/francinv/TDT4140-Middagsdeling](https://github
 [css-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [python-badge]: https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white
 [django-badge]:https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white
+[javascript-badge]: https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
